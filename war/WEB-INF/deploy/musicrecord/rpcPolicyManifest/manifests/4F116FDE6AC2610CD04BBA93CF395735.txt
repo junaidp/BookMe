@@ -1,0 +1,2 @@
+serviceClass: com.musicrecord.client.GreetingService
+path: 33ED564FE78EE266391072497CCF1826.gwt.rpc

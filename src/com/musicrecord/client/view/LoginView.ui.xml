@@ -1,0 +1,47 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:gwt.material.design.client.ui">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<div class="header">
+			<!-- <g:Label text="APPLICATION NAME " styleName="heading" /> -->
+		</div>
+
+		<div class="shadowDiv" ui:field="loginArea">
+
+			<g:Label />
+			<g:HTMLPanel width="500px">
+				<g:HTMLPanel styleName="w3-panel w3-blue header">
+					Sign in
+				</g:HTMLPanel>
+
+				<div>
+					<g:Label ui:field="lblError" styleName="w3-text-red" width="279px" />
+				</div>
+				<div>
+					<g:TextBox ui:field="txtUserName" width="250px" />
+					
+					
+				</div>
+				<div style="padding-top:10px">
+					<g:PasswordTextBox ui:field="txtPassword" width="250px" />
+				</div>
+
+				<div style="padding-left:80px;padding-top:10px">
+					<g:Button ui:field="btnSubmit" styleName="w3-button w3-blue"
+						width="90px" height="35px">
+						Sign in
+					</g:Button>
+				
+				</div>
+			</g:HTMLPanel>
+		</div>
+
+	</g:HTMLPanel>
+
+
+</ui:UiBinder> 
