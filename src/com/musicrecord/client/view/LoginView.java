@@ -3,13 +3,13 @@ package com.musicrecord.client.view;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PasswordTextBox;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.presenter.LoginPresenter;
+
+import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialLabel;
+import gwt.material.design.client.ui.MaterialTextBox;
 
 public class LoginView extends Composite implements LoginPresenter.Display {
 
@@ -19,47 +19,44 @@ public class LoginView extends Composite implements LoginPresenter.Display {
     }
 
     @UiField
-    TextBox txtUserName;
+    MaterialTextBox txtUserName;
     @UiField
-    PasswordTextBox txtPassword;
+    MaterialTextBox txtPassword;
     @UiField
-    Button btnSubmit;
+    MaterialButton btnSubmit;
     @UiField
-    Label lblError;
+    MaterialLabel lblError;
 
     public LoginView() {
 	initWidget(uiBinder.createAndBindUi(this));
-	txtUserName.getElement().setPropertyString("placeholder", "Enter Username");
-	txtPassword.getElement().setPropertyString("placeholder", "Enter Password");
     }
 
-    public Button getBtnSubmit() {
+    public MaterialButton getBtnSubmit() {
 	return btnSubmit;
     }
 
-    public void setBtnSubmit(Button btnSubmit) {
+    public void setBtnSubmit(MaterialButton btnSubmit) {
 	this.btnSubmit = btnSubmit;
     }
 
-    public TextBox getTxtUserName() {
+    public MaterialTextBox getTxtUserName() {
 	return txtUserName;
     }
 
-    public void setTxtUserName(TextBox txtUserName) {
+    public void setTxtUserName(MaterialTextBox txtUserName) {
 	this.txtUserName = txtUserName;
     }
 
-    public PasswordTextBox getTxtPassword() {
+    public MaterialTextBox getTxtPassword() {
 	return txtPassword;
     }
 
-    public void setTxtPassword(PasswordTextBox txtPassword) {
+    public void setTxtPassword(MaterialTextBox txtPassword) {
 	this.txtPassword = txtPassword;
     }
 
     @Override
-    public Label getLblError() {
-	// TODO Auto-generated method stub
+    public MaterialLabel getLblError() {
 	return lblError;
     }
 

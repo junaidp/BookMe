@@ -9,16 +9,16 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.view.LoadingPopup;
 import com.musicrecord.shared.User;
+
+import gwt.material.design.client.ui.MaterialLabel;
+import gwt.material.design.client.ui.MaterialTextBox;
 
 public class LoginPresenter implements Presenter
 
@@ -33,14 +33,14 @@ public class LoginPresenter implements Presenter
 
 		Object getHtmlErrorMessage = null;
 
-		PasswordTextBox getTxtPassword();
+		MaterialTextBox getTxtPassword();
 
-		TextBox getTxtUserName();
+		MaterialTextBox getTxtUserName();
 
 		HasClickHandlers getBtnSubmit();
 
 		// ListBox getListYears();
-		Label getLblError();
+		MaterialLabel getLblError();
 
 	}
 

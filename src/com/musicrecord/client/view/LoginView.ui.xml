@@ -1,47 +1,56 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:gwt.material.design.client.ui">
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:gwt.material.design.client.ui">
+	
 	<ui:style>
+	
 	.important {
 		font-weight: bold;
 	}
+	
 	</ui:style>
-	<g:HTMLPanel>
-		<div class="header">
+	
+    <d:MaterialContainer>
+   	
+		<d:MaterialPanel class="header">
 			<!-- <g:Label text="APPLICATION NAME " styleName="heading" /> -->
-		</div>
+		</d:MaterialPanel>
 
-		<div class="shadowDiv" ui:field="loginArea">
+		<d:MaterialPanel ui:field="loginArea" class="shadowDiv">
 
-			<g:Label />
-			<g:HTMLPanel width="500px">
-				<g:HTMLPanel styleName="w3-panel w3-blue header">
-					Sign in
-				</g:HTMLPanel>
+			<d:MaterialPanel  width="500px">
 
-				<div>
-					<g:Label ui:field="lblError" styleName="w3-text-red" width="279px" />
-				</div>
-				<div>
-					<g:TextBox ui:field="txtUserName" width="250px" />
-					
-					
-				</div>
-				<div style="padding-top:10px">
-					<g:PasswordTextBox ui:field="txtPassword" width="250px" />
-				</div>
-
-				<div style="padding-left:80px;padding-top:10px">
-					<g:Button ui:field="btnSubmit" styleName="w3-button w3-blue"
-						width="90px" height="35px">
-						Sign in
-					</g:Button>
+ 				<d:MaterialPanel>
+ 				 	<d:MaterialLabel text="Sign in"  styleName="w3-panel w3-blue header" />
+ 				</d:MaterialPanel>
+ 
+ 				<d:MaterialPanel>
+					<d:MaterialLabel ui:field="lblError" styleName="w3-text-red" width="279px"/>
+				</d:MaterialPanel>
 				
-				</div>
-			</g:HTMLPanel>
-		</div>
+				<d:MaterialPanel>
+					<d:MaterialTextBox ui:field="txtUserName" width="250px" placeholder="Enter Username"></d:MaterialTextBox>
+				</d:MaterialPanel>
+				
+				<d:MaterialPanel>
+					<d:MaterialTextBox ui:field="txtPassword" width="250px" placeholder="Enter Password"></d:MaterialTextBox>
+					
+				</d:MaterialPanel>
+				
+				<d:MaterialPanel style="padding-left:80px;padding-top:10px">
+					<d:MaterialButton ui:field="btnSubmit" text="Sign In" styleName="w3-button w3-blue" width="90px" height="35px"/>
+				</d:MaterialPanel>
 
-	</g:HTMLPanel>
+			</d:MaterialPanel>	
+		
+		</d:MaterialPanel>	
+		
+		<!-- FOOTER CODE HERE -->
+		
 
+	</d:MaterialContainer>
+	
 
+	
+	
 </ui:UiBinder> 
