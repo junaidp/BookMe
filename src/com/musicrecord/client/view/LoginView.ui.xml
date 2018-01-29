@@ -1,6 +1,8 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-			 xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:gwt.material.design.client.ui">
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+			 xmlns:d="urn:import:gwt.material.design.client.ui"
+			 xmlns:v="urn:import:com.musicrecord.client.view">
 	
 	<ui:style>
 	
@@ -29,11 +31,11 @@
 				</d:MaterialPanel>
 				
 				<d:MaterialPanel>
-					<d:MaterialTextBox ui:field="txtUserName" width="250px" placeholder="Enter Username"></d:MaterialTextBox>
+					<d:MaterialTextBox ui:field="txtUserName" width="250px" title="Enter Username"></d:MaterialTextBox>
 				</d:MaterialPanel>
 				
 				<d:MaterialPanel>
-					<d:MaterialTextBox ui:field="txtPassword" width="250px" placeholder="Enter Password"></d:MaterialTextBox>
+					<d:MaterialTextBox ui:field="txtPassword" width="250px" title="Enter Password"></d:MaterialTextBox>
 					
 				</d:MaterialPanel>
 				
@@ -46,7 +48,7 @@
 		</d:MaterialPanel>	
 		
 		<!-- FOOTER CODE HERE -->
-		
+		<v:Footer>	</v:Footer>
 
 	</d:MaterialContainer>
 	

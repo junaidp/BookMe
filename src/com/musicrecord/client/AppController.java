@@ -12,12 +12,12 @@ import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsAdminEventHandler;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.event.RecordsUserEventHandler;
-import com.musicrecord.client.presenter.GridPresenter;
+import com.musicrecord.client.presenter.MainPresenter;
 import com.musicrecord.client.presenter.HeaderPresenter;
 import com.musicrecord.client.presenter.LoginPresenter;
 import com.musicrecord.client.presenter.Presenter;
 import com.musicrecord.client.presenter.RecordsPresenter;
-import com.musicrecord.client.view.Grid;
+import com.musicrecord.client.view.Main;
 import com.musicrecord.client.view.HeaderView;
 import com.musicrecord.client.view.LoginView;
 import com.musicrecord.client.view.RecordsAdminView;
@@ -85,7 +85,7 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 	presenter.go(headerContainer);
 
 	if ("".equals(History.getToken())) {
-	    History.newItem("grid");
+	    History.newItem("login");
 	} else {
 	    History.fireCurrentHistoryState();
 	}
@@ -97,17 +97,17 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 	if (token != null) {
 	    presenter = null;
 
-	    if (loggedInUser == null && !token.equals("login")) {
-		History.newItem("login");
-	    }
+//	    if (loggedInUser == null && !token.equals("login")) {
+//		History.newItem("login");
+//	    }
 
-	    else if (token.equals("login")) {
+	    if (token.equals("login")) {
 		presenter = new LoginPresenter(rpcService, eventBus, new LoginView());
 		presenter.go(container);
 	    }
 
-	    else if (token.equals("grid")) {
-		presenter = new GridPresenter(rpcService, eventBus, new Grid());
+	    else if (token.equals("main")) {
+		presenter = new MainPresenter(rpcService, eventBus, new Main());
 		presenter.go(container);
 	    }
 

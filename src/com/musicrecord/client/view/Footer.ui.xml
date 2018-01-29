@@ -1,0 +1,42 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+	
+	<ui:style>
+	
+	.important {
+		font-weight: bold;
+		
+	}
+	</ui:style>
+	
+	<m:MaterialFooter>
+	
+		<m:MaterialRow>
+		
+			<m:MaterialColumn grid="s12 m6 l6">
+			
+				<m:MaterialTitle textColor="WHITE" title="Join The Discussion" description="We provide Gitter Chat rooms in order for GWT Developers discussed and collaborate about GWT Material Design and Phonegap Integration."/>
+				<m:MaterialButton ui:field="btnChat" text="CHAT" waves="LIGHT"/>
+						
+			</m:MaterialColumn>
+			
+			<m:MaterialColumn grid="s12 m6 l6">
+			
+				<m:MaterialTitle textColor="WHITE" title="GWT Phonegap" description="We provide Gitter Chat rooms in order for GWT Developers discussed and collaborate about GWT Material Design and Phonegap Integration."/>
+				<m:MaterialButton ui:field="btnDownloadPhonegap" text="GWT Material APK" waves="LIGHT"/>
+				
+			</m:MaterialColumn>
+			
+		</m:MaterialRow>
+		
+		<m:MaterialFooterCopyright>
+		
+			<m:MaterialLabel text="© 2015 Copyright GWT Material" />
+				
+		</m:MaterialFooterCopyright>
+		
+	</m:MaterialFooter>
+	
+</ui:UiBinder> 
