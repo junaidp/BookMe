@@ -16,14 +16,11 @@ public class Main extends Composite implements Display {
 	interface MainUiBinder extends UiBinder<Widget, Main> {
 	}
 
-	public Main() {
-		initWidget(uiBinder.createAndBindUi(this));
-	}
-
+	
 	@UiField
 	MaterialColumn container;
 
-	public Main(String firstName) {
+	public Main() {
 		initWidget(uiBinder.createAndBindUi(this));
 		
 		for(int i=0 ; i<2 ; i++)

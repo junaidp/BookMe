@@ -19,6 +19,7 @@ import com.musicrecord.client.presenter.Presenter;
 import com.musicrecord.client.presenter.RecordsPresenter;
 import com.musicrecord.client.view.Main;
 import com.musicrecord.client.view.HeaderView;
+import com.musicrecord.client.view.LoginDesign;
 import com.musicrecord.client.view.LoginView;
 import com.musicrecord.client.view.RecordsAdminView;
 import com.musicrecord.client.view.RecordsUserView;
@@ -85,7 +86,7 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 	presenter.go(headerContainer);
 
 	if ("".equals(History.getToken())) {
-	    History.newItem("login");
+	    History.newItem("main");
 	} else {
 	    History.fireCurrentHistoryState();
 	}
@@ -102,7 +103,7 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 //	    }
 
 	    if (token.equals("login")) {
-		presenter = new LoginPresenter(rpcService, eventBus, new LoginView());
+		presenter = new LoginPresenter(rpcService, eventBus, new LoginDesign());
 		presenter.go(container);
 	    }
 

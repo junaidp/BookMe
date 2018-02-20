@@ -17,7 +17,7 @@
 		<d:MaterialPanel class="header">
 			<!-- <g:Label text="APPLICATION NAME " styleName="heading" /> -->
 		</d:MaterialPanel>
-
+		
 		<d:MaterialPanel ui:field="loginArea" class="shadowDiv">
 
 			<d:MaterialPanel  width="500px">
@@ -46,9 +46,9 @@
 			</d:MaterialPanel>	
 		
 		</d:MaterialPanel>	
-		
+		<v:Tab></v:Tab>
 		<!-- FOOTER CODE HERE -->
-		<v:Footer>	</v:Footer>
+		
 
 	</d:MaterialContainer>
 	

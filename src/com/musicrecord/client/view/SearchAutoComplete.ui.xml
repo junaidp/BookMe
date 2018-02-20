@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	 xmlns:v="urn:import:com.musicrecord.client.view"
+	xmlns:m="urn:import:gwt.material.design.client.ui" xmlns:a="urn:import:gwt.material.design.addins.client.autocomplete">
+
+	<g:HTMLPanel>
+	 <m:MaterialColumn grid="s12 m12 l6">
+<a:MaterialAutoComplete ui:field="acList" placeholder="Music"></a:MaterialAutoComplete>
+</m:MaterialColumn>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+
+<m:MaterialNavBar>
+<m:MaterialNavBrand href="#Test" float="LEFT" text="Music Record"/>
+<m:MaterialNavSection float="RIGHT">
+<m:MaterialLink iconType="ACCOUNT_CIRCLE" iconPosition="LEFT" text="Sign in" textColor="WHITE" waves="LIGHT" ui:field="signin"/>
+<m:MaterialLink iconType="AUTORENEW" iconPosition="LEFT" text="Refresh" textColor="WHITE" waves="LIGHT"/>
+<m:MaterialTooltip text="menu">
+<m:MaterialLink iconType="SEARCH" textColor="WHITE" waves="LIGHT"></m:MaterialLink>
+</m:MaterialTooltip>
+<m:MaterialTooltip text="Starter">
+<m:MaterialLink iconType="MORE_VERT" textColor="WHITE" waves="LIGHT"></m:MaterialLink>
+</m:MaterialTooltip>
+</m:MaterialNavSection>
+</m:MaterialNavBar>
+
+</ui:UiBinder> 

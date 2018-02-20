@@ -2,8 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
 	xmlns:v="urn:import:com.musicrecord.client.view"
-	xmlns:m="urn:import:gwt.material.design.client.ui"
-	>
+	xmlns:m="urn:import:gwt.material.design.client.ui">
 	
 	<ui:style>
 	
@@ -12,9 +11,10 @@
 	}
 	
 	</ui:style>
-
 		<m:MaterialColumn ui:field="container" grid="l3">
-				
+			 
+			  <v:SearchAutoComplete></v:SearchAutoComplete>
+			  <v:Slider></v:Slider>
 		</m:MaterialColumn>
 	
 </ui:UiBinder> 

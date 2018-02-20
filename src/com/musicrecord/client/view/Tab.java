@@ -11,32 +11,34 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
-import com.musicrecord.client.presenter.HeaderPresenter.Display;
+import com.musicrecord.client.view.Footer.FooterUiBinder;
 
 import gwt.material.design.client.ui.MaterialLink;
+import gwt.material.design.client.ui.MaterialTab;
+import gwt.material.design.client.ui.MaterialTabItem;
 
-public class HeaderView extends Composite implements HasText, Display {
+public class Tab extends Composite implements HasText {
 
-	private static HeaderViewUiBinder uiBinder = GWT.create(HeaderViewUiBinder.class);
+	private static TabUiBinder uiBinder = GWT.create(TabUiBinder.class);
 
-	interface HeaderViewUiBinder extends UiBinder<Widget, HeaderView> {
+	interface TabUiBinder extends UiBinder<Widget, Tab> {
 	}
-	
 	@UiField
-	MaterialLink signin;
-	
-	public HeaderView() {
+	MaterialTab tab;
+	@UiField 
+	MaterialLink tab1;
+	public Tab() {
 		initWidget(uiBinder.createAndBindUi(this));
-		signin.addClickHandler(new ClickHandler() {
-			
-			@Override
-			public void onClick(ClickEvent event) {
-				SigninPopUp signinPopUp = new SigninPopUp();
-				
-			}
-		});
+//		tab1.addClickHandler(new  ClickHandler() {
+//			
+//			@Override
+//			public void onClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				Footer uiFooter= new Footer();
+//			}
+//		});
 	}
-	
+
 	@Override
 	public String getText() {
 		// TODO Auto-generated method stub
@@ -48,6 +50,5 @@ public class HeaderView extends Composite implements HasText, Display {
 		// TODO Auto-generated method stub
 		
 	}
-
 
 }

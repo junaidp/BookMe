@@ -2,7 +2,6 @@ package com.musicrecord.client.view;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -11,32 +10,30 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
-import com.musicrecord.client.presenter.HeaderPresenter.Display;
 
-import gwt.material.design.client.ui.MaterialLink;
+import gwt.material.design.addins.client.window.MaterialWindow;
 
-public class HeaderView extends Composite implements HasText, Display {
+public class SigninPopUp extends Composite implements HasText {
 
-	private static HeaderViewUiBinder uiBinder = GWT.create(HeaderViewUiBinder.class);
+	private static SigninPopUpUiBinder uiBinder = GWT.create(SigninPopUpUiBinder.class);
 
-	interface HeaderViewUiBinder extends UiBinder<Widget, HeaderView> {
+	interface SigninPopUpUiBinder extends UiBinder<Widget, SigninPopUp> {
 	}
 	
-	@UiField
-	MaterialLink signin;
-	
-	public HeaderView() {
+	@UiField 
+	MaterialWindow window;
+
+
+	public SigninPopUp() {
 		initWidget(uiBinder.createAndBindUi(this));
-		signin.addClickHandler(new ClickHandler() {
-			
-			@Override
-			public void onClick(ClickEvent event) {
-				SigninPopUp signinPopUp = new SigninPopUp();
-				
-			}
-		});
+		MaterialWindow window1 = new MaterialWindow();
+		LoginDesign objDesign = new LoginDesign();
+		window1.add(objDesign);
+		window1.open();
+		
 	}
-	
+		
+
 	@Override
 	public String getText() {
 		// TODO Auto-generated method stub
@@ -48,6 +45,5 @@ public class HeaderView extends Composite implements HasText, Display {
 		// TODO Auto-generated method stub
 		
 	}
-
 
 }

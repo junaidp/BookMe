@@ -1,0 +1,57 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:v="urn:import:com.musicrecord.client.view">
+	<g:HTMLPanel>
+	<m:MaterialRow>
+	<m:MaterialColumn grid="s12">
+	<m:MaterialTab ui:field="tab" indicatorColor="YELLOW" shadow="1">
+	<m:MaterialTabItem waves="YELLOW" >
+	<m:MaterialLink ui:field="tab1" text="FOOTER" href="#tab1">
+	</m:MaterialLink>
+	</m:MaterialTabItem>
+	
+	<m:MaterialTabItem waves="YELLOW" >
+	<m:MaterialLink text="LOGIN" href="#tab2" >
+	</m:MaterialLink>
+	</m:MaterialTabItem>
+	
+	<m:MaterialTabItem waves="YELLOW">
+	<m:MaterialLink text="SEARCH" href="#tab3"></m:MaterialLink>
+	</m:MaterialTabItem>
+	
+	<m:MaterialTabItem waves="YELLOW">
+	<m:MaterialLink text="NAVBAR" href="#tab4"></m:MaterialLink>
+	</m:MaterialTabItem>
+	
+	<m:MaterialTabItem waves="YELLOW">
+	<m:MaterialLink text="SLIDER" href="#tab5"></m:MaterialLink>
+	</m:MaterialTabItem>
+	
+	</m:MaterialTab>
+	</m:MaterialColumn>
+	
+	<m:MaterialColumn m:id="tab1" grid="s12">
+		<v:Footer></v:Footer>
+	</m:MaterialColumn>
+	
+	<m:MaterialColumn m:id="tab2" grid="s12">
+	    <v:LoginDesign></v:LoginDesign>
+	</m:MaterialColumn>
+	
+	<m:MaterialColumn m:id="tab3" grid="s12">
+	    <v:NavBarSearch></v:NavBarSearch>
+	</m:MaterialColumn>
+	
+	<m:MaterialColumn m:id="tab4" grid="s12">
+	  
+	</m:MaterialColumn>
+	
+	<m:MaterialColumn m:id="tab5" grid="s12">
+	   <v:Slider></v:Slider>
+	</m:MaterialColumn>
+	
+	</m:MaterialRow>
+	</g:HTMLPanel>
+</ui:UiBinder> 
