@@ -7,7 +7,8 @@
 	}
 	</ui:style>
 
-	<m:MaterialCard backgroundColor="WHITE">
+<m:MaterialColumn grid="l5 m5 s12">
+	<m:MaterialCard backgroundColor="WHITE" >
 
 		<m:MaterialCardImage waves="LIGHT">
 
@@ -31,7 +32,7 @@
 		</m:MaterialCardAction>
 
 	</m:MaterialCard>
-
+</m:MaterialColumn>
 
 
 </ui:UiBinder> 

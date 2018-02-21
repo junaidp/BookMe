@@ -11,10 +11,15 @@
 	}
 	
 	</ui:style>
-		<m:MaterialColumn ui:field="container" grid="l3">
-			 
-			  <v:SearchAutoComplete></v:SearchAutoComplete>
-			  <v:Slider></v:Slider>
+		
+		<m:MaterialColumn>
+
+	   <v:Slider></v:Slider>
+		 <v:SearchAutoComplete></v:SearchAutoComplete>
+		
+		
+	<m:MaterialRow ui:field="container">	
+		</m:MaterialRow>
 		</m:MaterialColumn>
 	
 </ui:UiBinder> 

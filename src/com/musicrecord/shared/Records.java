@@ -32,8 +32,14 @@ public class Records implements Serializable {
     @JoinColumn(name = "categoryid")
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
+    
+    @Column(name = "displayimage")
+    private String displayImage;
 
-    @Transient
+    @Column(name = "description")
+    private String musicDescription;
+   
+	@Transient
     private int count;
 
     public int getRecords() {
@@ -75,5 +81,21 @@ public class Records implements Serializable {
     public void setCount(int count) {
 	this.count = count;
     }
+
+	public String getDisplayImage() {
+		return displayImage;
+	}
+
+	public void setDisplayImage(String displayImage) {
+		this.displayImage = displayImage;
+	}
+
+	public String getMusicDescription() {
+		return musicDescription;
+	}
+
+	public void setMusicDescription(String musicDescription) {
+		this.musicDescription = musicDescription;
+	}
 
 }

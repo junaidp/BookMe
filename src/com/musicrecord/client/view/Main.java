@@ -1,5 +1,4 @@
 package com.musicrecord.client.view;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -8,6 +7,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.presenter.MainPresenter.Display;
 
 import gwt.material.design.client.ui.MaterialColumn;
+import gwt.material.design.client.ui.MaterialRow;
 
 public class Main extends Composite implements Display {
 
@@ -16,17 +16,21 @@ public class Main extends Composite implements Display {
 	interface MainUiBinder extends UiBinder<Widget, Main> {
 	}
 
-	
 	@UiField
-	MaterialColumn container;
+	MaterialRow container;
+
 
 	public Main() {
 		initWidget(uiBinder.createAndBindUi(this));
 		
-		for(int i=0 ; i<2 ; i++)
-		{
-			Service service = new Service("cardImage.png" , "Sample" , "I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively." , "Link 1" , "Link 1");
-			container.add(service);
-		}
 	}
+	
+	public MaterialRow getContainer() {
+		return container;
+	}
+
+	public void setContainer(MaterialRow container) {
+		this.container = container;
+	}
+
 }
