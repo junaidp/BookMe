@@ -15,7 +15,7 @@
 		<m:MaterialColumn>
 
 	   <v:Slider></v:Slider>
-		 <v:SearchAutoComplete></v:SearchAutoComplete>
+		 <v:SearchAutoComplete ui:field="searchAutoComplete"></v:SearchAutoComplete>
 		
 		
 	<m:MaterialRow ui:field="container">	

@@ -61,17 +61,6 @@ public class SearchAutoComplete extends Composite implements HasText {
 
 		});
 	    }
-//	private AbstractList<Category> getAllUsers() {
-//		// TODO Auto-generated method stub
-////		ArrayList<UserRecord> records = new ArrayList<UserRecord>();
-////		UserRecord userRecord = new UserRecord();
-////		userRecord.setName("Moqeet");
-////		userRecord.setAddress("Rawat");
-////		records.add(userRecord);
-//		
-//		
-//		return categories;
-//	}
 	@UiField
     MaterialAutoComplete acList;
 	@Override
@@ -84,6 +73,9 @@ public class SearchAutoComplete extends Composite implements HasText {
 	public void setText(String text) {
 		// TODO Auto-generated method stub
 		
+	}
+	public MaterialAutoComplete getAcList() {
+		return acList;
 	}
 	
 

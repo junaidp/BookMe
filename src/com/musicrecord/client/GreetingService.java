@@ -7,6 +7,7 @@ import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
+import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
 
 /**
@@ -24,4 +25,8 @@ public interface GreetingService extends RemoteService {
     String deleteRecord(Records record) throws Exception;
 
     ArrayList<Category> fetchCategories() throws Exception;
+
+	ArrayList<Reviews> fetchReviews() throws Exception;
+
+	ArrayList<Reviews> saveReviews() throws Exception;
 }

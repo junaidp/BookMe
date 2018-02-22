@@ -1,6 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui" xmlns:r="urn:import:gwt.material.design.addins.client.rating">
 	<ui:style>
 	.important {
 		font-weight: bold;
@@ -28,7 +28,7 @@
 
 			<m:MaterialLink ui:field="link1"/>
 			<m:MaterialLink ui:field="link2"/>
-
+<r:MaterialRating ui:field="rating" value="3"></r:MaterialRating>
 		</m:MaterialCardAction>
 
 	</m:MaterialCard>

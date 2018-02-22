@@ -16,13 +16,14 @@ import org.hibernate.criterion.Restrictions;
 
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
+import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
 
 public class MySQLRdbHelper {
 
     private SessionFactory sessionFactory;
     Logger logger;
-
+    
     public void setSessionFactory(SessionFactory sessionFactory) {
 	this.sessionFactory = sessionFactory;
     }
@@ -56,18 +57,52 @@ public class MySQLRdbHelper {
 
 	return users;
     }
+    //Getting Category ID
+    public int getCategoryID(String keyWord) throws Exception {
+
+    	Category category = null;
+    	Session session = null;
+    	try {
+    	    session = sessionFactory.openSession();
+
+    	    Criteria crit = session.createCriteria(Category.class);
+    	    crit.add(Restrictions.eq("categoryname", keyWord));
+    	
+    	    List rsList = crit.list();
+    	    for (Iterator it = rsList.iterator(); it.hasNext();) {
+    		category = (Category) it.next();
+    		System.out.println(category.getCategoryid());
+    	    }
+
+    	} catch (Exception ex) {
+    	    logger.warn(String.format("Exception occured in getCategoryID", ex.getMessage()), ex);
+    	    System.out.println("Exception occured in getCategoryID" + ex.getMessage());
+
+    	    throw new Exception("Exception occured in getCategoryID");
+    	} finally {
+    	    session.close();
+    	}
+
+    	return category.getCategoryid();
+        }
+
 
     public ArrayList<Records> fetchRecords(HashMap<String, String> map) throws Exception {
 	Session session = null;
 	int count = 0;
 //	String searchBy = map.get("searchBy");
-	String keyWord = map.get("keyWord");
+     String keyWord = map.get("keyWord");
+
+	// GET ID FROM NAME..
+	int categoryId = getCategoryID(keyWord);
 	ArrayList<Records> listRecords = new ArrayList<Records>();
 	try {
 	    session = sessionFactory.openSession();
 
 	    Criteria crit = session.createCriteria(Records.class);
+	
 	    crit.createAlias("category", "cat");
+	    crit.add(Restrictions.eq("cat.categoryid", categoryId));
 	    if (keyWord.trim().length() > 0) {
 //		if (searchBy.equalsIgnoreCase("title")) {
 //		    crit.add(Restrictions.ilike("title", keyWord, MatchMode.START));
@@ -168,4 +203,49 @@ public class MySQLRdbHelper {
 	}
 
     }
+    
+	public ArrayList<Reviews> fetchReviews() throws Exception {
+		Session session = null;
+
+		ArrayList<Reviews> listReviews = new ArrayList<Reviews>();
+		try{
+		    session = sessionFactory.openSession();
+
+		    Criteria crit = session.createCriteria(Reviews.class);
+
+		    List csList = crit.list();
+
+		    for (Iterator it = csList.iterator(); it.hasNext();) {
+
+			Reviews reviews = (Reviews) it.next();
+			listReviews.add(reviews);
+
+		    }
+		    return listReviews;
+
+		} catch (Exception ex) {
+		    logger.warn(String.format("Exception occured in Fetch Categories", ex.getMessage()), ex);
+		    throw new Exception("Exception occured in fetchCategories");
+		} finally {
+		    session.close();
+		}
+		
+	}
+
+	public String saveReview(Reviews reviews) throws Exception {
+		Session session = null;
+
+		try {
+		    session = sessionFactory.openSession();
+		    session.saveOrUpdate(reviews);
+		    session.flush();
+		    return "Reviews Saved";
+
+		} catch (Exception ex) {
+		    logger.warn(String.format("Exception occured in save reviews", ex.getMessage()), ex);
+		    throw new Exception("Exception occured in save reviews");
+		} finally {
+		    session.close();
+		}
+	}
 }

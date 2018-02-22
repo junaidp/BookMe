@@ -18,6 +18,8 @@ public class Main extends Composite implements Display {
 
 	@UiField
 	MaterialRow container;
+	@UiField
+	SearchAutoComplete searchAutoComplete;
 
 
 	public Main() {
@@ -31,6 +33,10 @@ public class Main extends Composite implements Display {
 
 	public void setContainer(MaterialRow container) {
 		this.container = container;
+	}
+
+	public SearchAutoComplete getSearchAutoComplete() {
+		return searchAutoComplete;
 	}
 
 }
