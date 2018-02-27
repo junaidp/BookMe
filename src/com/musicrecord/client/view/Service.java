@@ -1,5 +1,4 @@
 package com.musicrecord.client.view;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -14,7 +13,6 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
-
 import gwt.material.design.addins.client.rating.MaterialRating;
 import gwt.material.design.client.ui.MaterialCardTitle;
 import gwt.material.design.client.ui.MaterialImage;
@@ -26,6 +24,7 @@ public class Service extends Composite{
 
 	private static ServiceUiBinder uiBinder = GWT.create(ServiceUiBinder.class);
 
+	
 	interface ServiceUiBinder extends UiBinder<Widget, Service> {
 	}
 	@UiField
@@ -55,7 +54,6 @@ public class Service extends Composite{
 			}
 		});
 	}
-	
 	
 
 	public Service(String imageUrl, String imageTitle, String label, String firstLink, String secondLink) {

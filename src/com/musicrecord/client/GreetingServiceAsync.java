@@ -24,7 +24,7 @@ public interface GreetingServiceAsync {
 
     void fetchCategories(AsyncCallback<ArrayList<Category>> callback);
     
-    void fetchReviews(AsyncCallback<ArrayList<Reviews>> callback);
+    void fetchReviews(AsyncCallback<ArrayList<Reviews>> asyncCallback);
     
     void saveReviews(AsyncCallback<ArrayList<Reviews>> callback);
 

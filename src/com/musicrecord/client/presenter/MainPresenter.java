@@ -17,6 +17,7 @@ import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.client.view.SearchAutoComplete;
 import com.musicrecord.client.view.Service;
 import com.musicrecord.shared.Records;
+import com.musicrecord.shared.Reviews;
 import com.sun.java.swing.plaf.windows.resources.windows;
 
 import gwt.material.design.client.ui.MaterialColumn;
@@ -93,5 +94,24 @@ public class MainPresenter implements Presenter
 			display.getContainer().add(service);
 		}
 	}
+	public void fetchReviews(){
+		HashMap<String, String> requestInfo = new HashMap<String, String>();
+		requestInfo.put("keyWord", "");
+		requestInfo.put("searchBy", "");
+		
+	    rpcService.fetchReviews(new AsyncCallback<ArrayList<Reviews>>() {
 
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onSuccess(ArrayList<Reviews> result) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
 }
