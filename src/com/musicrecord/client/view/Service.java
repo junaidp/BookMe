@@ -1,4 +1,5 @@
 package com.musicrecord.client.view;
+import com.gargoylesoftware.htmlunit.javascript.host.intl.V8BreakIterator;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -13,7 +14,11 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.musicrecord.client.widgets.SubmitReview;
+import com.sun.java.swing.plaf.windows.resources.windows;
+
 import gwt.material.design.addins.client.rating.MaterialRating;
+import gwt.material.design.addins.client.window.MaterialWindow;
 import gwt.material.design.client.ui.MaterialCardTitle;
 import gwt.material.design.client.ui.MaterialImage;
 import gwt.material.design.client.ui.MaterialLabel;
@@ -53,6 +58,15 @@ public class Service extends Composite{
 				 MaterialToast.fireToast(event.getValue() + " Rate value");
 			}
 		});
+		link2.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				Window.alert("OK");
+				new SubmitReview();
+			}
+		});			
 	}
 	
 
@@ -63,6 +77,18 @@ public class Service extends Composite{
 		this.label.setText(label);
 		link1.setText(firstLink);
 		link2.setText(secondLink);
+		link2.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+				MaterialWindow windowSubmitReviews = new MaterialWindow();
+				SubmitReview submitReview = new SubmitReview();
+				windowSubmitReviews.add(submitReview);
+				windowSubmitReviews.open();
+			}
+		});	
 		
 	}
 

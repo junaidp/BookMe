@@ -28,6 +28,7 @@
 
 			<m:MaterialLink ui:field="link1"/>
 			<m:MaterialLink ui:field="link2"/>
+			
 <r:MaterialRating ui:field="rating" value="3"></r:MaterialRating>
 		</m:MaterialCardAction>
 

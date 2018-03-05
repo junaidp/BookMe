@@ -77,7 +77,4 @@ public class SearchAutoComplete extends Composite implements HasText {
 	public MaterialAutoComplete getAcList() {
 		return acList;
 	}
-	
-
-
 }

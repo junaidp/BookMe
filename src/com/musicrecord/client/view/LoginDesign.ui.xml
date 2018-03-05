@@ -45,9 +45,11 @@
 	<m:MaterialLabel ui:field="lblError" styleName="w3-text-red" width="279px"/>
 	<m:MaterialTextBox type="EMAIL" placeholder="Email" width="100%" ui:field="email"/>
 	<m:MaterialTextBox type="PASSWORD" placeholder="Password" width="100%" ui:field="password" />
-	<m:MaterialButton ui:field="btnLogin" waves="LIGHT" text="Log In" width="100%"/>
+	<m:MaterialButton ui:field="btnLogin" waves="LIGHT" text="Log In" width="100%"/> 
+	<m:MaterialButton ui:field="btnSignUp" waves="LIGHT" text="Sign Up" width="100%"/>
+	
 	<m:MaterialRow>
-	<m:MaterialColumn grid="s12 m12 l6">
+	<m:MaterialColumn grid="s12 m12 l12">
 	<m:MaterialCheckBox text="Keep me logged in"/>
 	</m:MaterialColumn>
 	</m:MaterialRow>

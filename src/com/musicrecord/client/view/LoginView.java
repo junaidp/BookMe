@@ -1,6 +1,9 @@
 package com.musicrecord.client.view;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -27,15 +30,32 @@ public class LoginView extends Composite implements LoginPresenter.Display {
     MaterialButton btnSubmit;
     @UiField
     MaterialLabel lblError;
-   
+    @UiField
+    MaterialButton btnSignUp;
     
-    public LoginView() {
-	initWidget(uiBinder.createAndBindUi(this));
-    }
+  //  public LoginView() {
+	//initWidget(uiBinder.createAndBindUi(this));
+   // }
 
+    public LoginView() {
+		initWidget(uiBinder.createAndBindUi(this));
+		btnSignUp.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				SigninPopUp signinPopUp = new SigninPopUp();
+				
+			}
+		});
+    }
+    
     public MaterialButton getBtnSubmit() {
 	return btnSubmit;
     }
+    public MaterialButton getBtnSignUp() {
+    	return btnSignUp;
+        }
+
 
     public void setBtnSubmit(MaterialButton btnSubmit) {
 	this.btnSubmit = btnSubmit;
@@ -61,5 +81,7 @@ public class LoginView extends Composite implements LoginPresenter.Display {
     public MaterialLabel getLblError() {
 	return lblError;
     }
+
+
 
 }

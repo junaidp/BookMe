@@ -16,8 +16,12 @@ import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.view.LoadingPopup;
+import com.musicrecord.client.view.SignUpView;
 import com.musicrecord.shared.User;
+import com.sun.java.swing.plaf.windows.resources.windows;
 
+import gwt.material.design.addins.client.window.MaterialWindow;
+import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialLoader;
 import gwt.material.design.client.ui.MaterialTextBox;
@@ -40,9 +44,13 @@ public class LoginPresenter implements Presenter
 		MaterialTextBox getTxtUserName();
 
 		HasClickHandlers getBtnSubmit();
-
-		// ListBox getListYears();
+		
+		      // ListBox getListYears();
 		MaterialLabel getLblError();
+
+		MaterialButton getBtnSignUp();
+
+		//MaterialButton getBtnSignUp();
 
 	}
 
@@ -50,6 +58,7 @@ public class LoginPresenter implements Presenter
 		this.rpcService = rpcService;
 		this.eventBus = eventBus;
 		this.display = view;
+		bind();
 	}
 
 	public void go(HasWidgets container) {
@@ -64,6 +73,7 @@ public class LoginPresenter implements Presenter
 
 		display.getBtnSubmit().addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
+				Window.alert("loginj");
 				
 						MaterialLoader.loading(true);
 						MaterialLoader.progress(true);
@@ -82,6 +92,18 @@ public class LoginPresenter implements Presenter
 				
 			}
 
+		});
+		display.getBtnSignUp().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+	             Window.alert("window open");
+				// TODO Auto-generated method stub
+				SignUpView signUpView = new SignUpView();
+				MaterialWindow signUpWindow = new MaterialWindow();
+				signUpWindow.add(signUpView);
+				signUpWindow.open();
+			}
 		});
 
 	}

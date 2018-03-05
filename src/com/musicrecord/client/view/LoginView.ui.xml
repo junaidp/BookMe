@@ -23,7 +23,7 @@
 			<d:MaterialPanel  width="500px">
 
  				<d:MaterialPanel>
- 				 	<d:MaterialLabel text="Sign in"  styleName="w3-panel w3-blue header" />
+ 				 	<d:MaterialLabel text="Sign in" styleName="w3-panel w3-blue header" />
  				</d:MaterialPanel>
  
  				<d:MaterialPanel>
@@ -41,6 +41,9 @@
 				
 				<d:MaterialPanel style="padding-left:80px;padding-top:10px">
 					<d:MaterialButton ui:field="btnSubmit" text="Sign In" styleName="w3-button w3-blue" width="90px" height="35px"/>
+				</d:MaterialPanel>
+				<d:MaterialPanel style="padding-left:80px;padding-top:10px">
+					<d:MaterialButton ui:field="btnSignUp" text="Sign Up" styleName="w3-button w3-blue" width="90px" height="35px"/>
 				</d:MaterialPanel>
 
 			</d:MaterialPanel>	
