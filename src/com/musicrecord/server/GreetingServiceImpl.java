@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.musicrecord.client.GreetingService;
+import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
@@ -52,10 +53,19 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		return musicHelper.fetchReviews();
 	}
 
+
+
 	@Override
-	public ArrayList<Reviews> saveReviews() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public String signup(User user) throws Exception {
+		return musicHelper.signup(user);
+		 
 	}
+
+	@Override
+	public String saveReviews(Reviews reviews) throws Exception {
+		// TODO Auto-generated method stub
+		return musicHelper.saveReview(reviews);
+	}
+	
 
 }

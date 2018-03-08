@@ -18,6 +18,7 @@ public class Reviews implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "reviewid")
 	private int reviewId;
+
 	@Column(name="reviews")
 	private int reviews;
 
@@ -25,6 +26,9 @@ public class Reviews implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Records recordId;
 
+	@Column(name = "desc")
+	private String desc;
+	
 	public int getReviewId() {
 		return reviewId;
 	}
@@ -49,6 +53,14 @@ public class Reviews implements Serializable {
 		this.recordId = recordId;
 	}
 
+	public String getDesc() {
+		return desc;
+	}
 
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	
 
 }

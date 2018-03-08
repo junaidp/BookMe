@@ -11,6 +11,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
+import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.presenter.LoginPresenter;
 
@@ -35,20 +36,21 @@ public class LoginDesign extends Composite implements LoginPresenter.Display {
     @UiField
     MaterialLabel lblError;
     @UiField
-    MaterialButton btnSignUp;
+    Hyperlink linkSignUp;
     
 	public LoginDesign() {
 
 		initWidget(uiBinder.createAndBindUi(this));
-btnSignUp.addClickHandler(new ClickHandler() {
+		linkSignUp.addClickHandler(new ClickHandler() {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert("button is clicked");
+				 
 				SignUpView signUpView = new SignUpView();
 				MaterialWindow signUpWindow = new MaterialWindow();
 				signUpWindow.add(signUpView);
 				signUpWindow.open();
+			    
 
 				
 				//SigninPopUp signinPopUp = new SigninPopUp();
@@ -76,9 +78,6 @@ btnSignUp.addClickHandler(new ClickHandler() {
 	public void setBtnLogin(MaterialButton btnLogin) {
 		this.btnLogin = btnLogin;
 	}
-	public void setBtnSignUp(MaterialButton btnSignUp) {
-		this.btnSignUp = btnSignUp;
-	}
 
 	@Override
 	public MaterialLabel getLblError() {
@@ -100,12 +99,21 @@ btnSignUp.addClickHandler(new ClickHandler() {
 	public MaterialButton getBtnSubmit() {
 		return btnLogin;
 	}
-    
-	
+
 	@Override
 	public MaterialButton getBtnSignUp() {
-		return btnSignUp;
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	public Hyperlink getLinkSignUp() {
+		return linkSignUp;
+	}
+
+	public void setLinkSignUp(Hyperlink linkSignUp) {
+		this.linkSignUp = linkSignUp;
+	}
+    
 	
 	
   

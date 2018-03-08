@@ -90,7 +90,7 @@ public class MainPresenter implements Presenter
 		display.getContainer().clear();
 		for(int i=0 ; i<result.size() ; i++)
 		{
-			Service service = new Service(result.get(i).getDisplayImage() , result.get(i).getArtist(), result.get(i).getMusicDescription(), "Book" , "Reviews");
+			Service service = new Service(result.get(i));
 			display.getContainer().add(service);
 		}
 	}

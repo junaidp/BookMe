@@ -27,6 +27,9 @@ public class MusicHelper {
 	}
 	return user;
     }
+     public String signup(User user) throws Exception{
+    	return rdbHelper.saveUser(user);
+     }
 
     public ArrayList<Records> fetchRecords(HashMap<String, String> map) throws Exception {
 

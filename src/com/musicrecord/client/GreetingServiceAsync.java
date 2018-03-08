@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
@@ -26,6 +27,7 @@ public interface GreetingServiceAsync {
     
     void fetchReviews(AsyncCallback<ArrayList<Reviews>> asyncCallback);
     
-    void saveReviews(AsyncCallback<ArrayList<Reviews>> callback);
+    void saveReviews(Reviews review , AsyncCallback<String> callback);
 
+	void signup(User user, AsyncCallback<String> callback);
 }

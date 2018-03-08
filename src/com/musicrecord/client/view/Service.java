@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.widgets.SubmitReview;
+import com.musicrecord.shared.Records;
 import com.sun.java.swing.plaf.windows.resources.windows;
 
 import gwt.material.design.addins.client.rating.MaterialRating;
@@ -64,19 +65,20 @@ public class Service extends Composite{
 			public void onClick(ClickEvent event) {
 				// TODO Auto-generated method stub
 				Window.alert("OK");
-				new SubmitReview();
+				;
 			}
 		});			
 	}
 	
 
-	public Service(String imageUrl, String imageTitle, String label, String firstLink, String secondLink) {
+	public Service(Records records) {
+		//.getDisplayImage() , result.get(i).getArtist(), result.get(i).getMusicDescription(), "Book" , "Reviews"
 		initWidget(uiBinder.createAndBindUi(this));
-		image.setUrl(imageUrl);
-		this.imageTitle.setText(imageTitle);
-		this.label.setText(label);
-		link1.setText(firstLink);
-		link2.setText(secondLink);
+		image.setUrl(records.getDisplayImage());
+		this.imageTitle.setText(records.getArtist());
+		this.label.setText(records.getMusicDescription());
+		link1.setText("Book");
+		link2.setText("Review");
 		link2.addClickHandler(new ClickHandler() {
 			
 			@Override
@@ -84,9 +86,10 @@ public class Service extends Composite{
 				// TODO Auto-generated method stub
 				
 				MaterialWindow windowSubmitReviews = new MaterialWindow();
-				SubmitReview submitReview = new SubmitReview();
+				SubmitReview submitReview = new SubmitReview(records);
 				windowSubmitReviews.add(submitReview);
 				windowSubmitReviews.open();
+				windowSubmitReviews.setTitle("Comments");
 			}
 		});	
 		

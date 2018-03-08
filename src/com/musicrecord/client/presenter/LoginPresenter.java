@@ -73,8 +73,6 @@ public class LoginPresenter implements Presenter
 
 		display.getBtnSubmit().addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				Window.alert("loginj");
-				
 						MaterialLoader.loading(true);
 						MaterialLoader.progress(true);
 			

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
+import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
@@ -15,6 +16,7 @@ import com.musicrecord.shared.User;
  */
 @RemoteServiceRelativePath("greet")
 public interface GreetingService extends RemoteService {
+	String signup(User user) throws Exception;
 
     User signIn(String userid, String password) throws Exception;
 
@@ -28,5 +30,6 @@ public interface GreetingService extends RemoteService {
 
 	ArrayList<Reviews> fetchReviews() throws Exception;
 
-	ArrayList<Reviews> saveReviews() throws Exception;
+	String saveReviews(Reviews reviews) throws Exception;
+
 }

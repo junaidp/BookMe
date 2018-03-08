@@ -14,6 +14,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
@@ -159,6 +160,22 @@ public class MySQLRdbHelper {
 	}
     }
 
+    public String saveUser(User user) throws Exception {
+    	Session session = null;
+
+    	try {
+    	    session = sessionFactory.openSession();
+    	    session.saveOrUpdate(user);
+    	    session.flush();
+    	    return "User is Saved";
+
+    	} catch (Exception ex) {
+    	    logger.warn(String.format("Exception occured in saving user", ex.getMessage()), ex);
+    	    throw new Exception("Exception occured in saving user");
+    	} finally {
+    	    session.close();
+    	}
+        }
     public String deleteRecord(Records record) throws Exception {
 	Session session = null;
 
@@ -237,7 +254,11 @@ public class MySQLRdbHelper {
 
 		try {
 		    session = sessionFactory.openSession();
-		    session.saveOrUpdate(reviews);
+		    Reviews rv = new Reviews();
+		    rv.setDesc("");
+		    rv.setRecordId(null);
+		    rv.setReviews(2);
+		    session.save(rv);
 		    session.flush();
 		    return "Reviews Saved";
 
@@ -248,4 +269,21 @@ public class MySQLRdbHelper {
 		    session.close();
 		}
 	}
+    public String saveReview(SubmitReview submitReview) throws Exception {
+	Session session = null;
+
+	try {
+	    session = sessionFactory.openSession();
+	    session.saveOrUpdate(submitReview);
+	    session.flush();
+	    return "Reviews  Saved";
+
+	} catch (Exception ex) {
+	    logger.warn(String.format("Exception occured in save Reviews", ex.getMessage()), ex);
+	    throw new Exception("Exception occured in save Reviews");
+	} finally {
+	    session.close();
+	}
+    }
+
 }

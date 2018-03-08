@@ -38,7 +38,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 	<m:MaterialRow backgroundColor="GREY_LIGHTEN_4" addStyleNames="{style.login_demo}">
-	<m:MaterialColumn grid="s12 m8 l6" offset="l4"> 
+	<m:MaterialColumn grid="s12 m12 l12" > 
 	<m:MaterialPanel shadow="1" addStyleNames="{style.panel}">
 	<m:MaterialPanel addStyleNames="{style.fieldPanel}">
 	<m:MaterialImage url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" type="CIRCLE" addStyleNames="{style.imgProfile} z-depth-1"/>
@@ -46,7 +46,7 @@
 	<m:MaterialTextBox type="EMAIL" placeholder="Email" width="100%" ui:field="email"/>
 	<m:MaterialTextBox type="PASSWORD" placeholder="Password" width="100%" ui:field="password" />
 	<m:MaterialButton ui:field="btnLogin" waves="LIGHT" text="Log In" width="100%"/> 
-	<m:MaterialButton ui:field="btnSignUp" waves="LIGHT" text="Sign Up" width="100%"/>
+	<g:Hyperlink ui:field="linkSignUp"  text="Sign Up"></g:Hyperlink>
 	
 	<m:MaterialRow>
 	<m:MaterialColumn grid="s12 m12 l12">
