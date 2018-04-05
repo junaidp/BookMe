@@ -226,7 +226,7 @@ public class RecordsPresenter implements Presenter
 
 	    @Override
 	    public void onFailure(Throwable caught) {
-		Window.alert("fail");
+		Window.alert("fail fetch records");
 
 	    }
 	});

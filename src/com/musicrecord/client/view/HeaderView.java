@@ -11,11 +11,14 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
+import com.musicrecord.client.presenter.LoginPresenter;
+import com.musicrecord.client.presenter.Presenter;
 import com.musicrecord.client.presenter.HeaderPresenter.Display;
 
+import gwt.material.design.addins.client.window.MaterialWindow;
 import gwt.material.design.client.ui.MaterialLink;
 
-public class HeaderView extends Composite implements HasText, Display {
+public class HeaderView extends Composite implements  Display {
 
 	private static HeaderViewUiBinder uiBinder = GWT.create(HeaderViewUiBinder.class);
 
@@ -25,29 +28,20 @@ public class HeaderView extends Composite implements HasText, Display {
 	@UiField
 	MaterialLink signin;
 	
+	
+	
 	public HeaderView() {
 		initWidget(uiBinder.createAndBindUi(this));
-		signin.addClickHandler(new ClickHandler() {
-			
-			@Override
-			public void onClick(ClickEvent event) {
-				SigninPopUp signinPopUp = new SigninPopUp();
-				
-			}
-		});
 	}
 	
-	@Override
-	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
+	public MaterialLink getSignin() {
+		return signin;
+	}
+	public void setSignin(MaterialLink signin) {
+		this.signin = signin;
 	}
 
-	@Override
-	public void setText(String text) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
+	
 
 }

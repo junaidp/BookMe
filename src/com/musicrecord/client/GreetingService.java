@@ -32,4 +32,8 @@ public interface GreetingService extends RemoteService {
 
 	String saveReviews(Reviews reviews) throws Exception;
 
+	ArrayList<Reviews> fetchReviews(HashMap<String, String> requestInfo);
+	
+	String bookUser(User users) throws Exception;
 }
+

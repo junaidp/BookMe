@@ -23,6 +23,7 @@ import com.sun.java.swing.plaf.windows.resources.windows;
 import gwt.material.design.addins.client.window.MaterialWindow;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialLabel;
+import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialLoader;
 import gwt.material.design.client.ui.MaterialTextBox;
 
@@ -33,6 +34,7 @@ public class LoginPresenter implements Presenter
 	private final HandlerManager eventBus;
 	private final Display display;
 	private Logger logger = Logger.getLogger("DashBoardPresenter");
+	private MaterialWindow signInpopup ;
 
 	public interface Display {
 		Widget asWidget();
@@ -48,17 +50,19 @@ public class LoginPresenter implements Presenter
 		      // ListBox getListYears();
 		MaterialLabel getLblError();
 
-		MaterialButton getBtnSignUp();
+		//MaterialButton getBtnSignUp();
+		MaterialLink getlinkSignUp();
 
 		//MaterialButton getBtnSignUp();
 
 	}
 
-	public LoginPresenter(GreetingServiceAsync rpcService, HandlerManager eventBus, Display view) {
+	public LoginPresenter(GreetingServiceAsync rpcService, HandlerManager eventBus, MaterialWindow signInpopup, Display view) {
 		this.rpcService = rpcService;
 		this.eventBus = eventBus;
 		this.display = view;
-		bind();
+		this.signInpopup = signInpopup;
+		
 	}
 
 	public void go(HasWidgets container) {
@@ -67,10 +71,10 @@ public class LoginPresenter implements Presenter
 		bind();
 	}
 
+	
 	private void bind() {
 
 		RootPanel.get("loadingMessage").setVisible(false);
-
 		display.getBtnSubmit().addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 						MaterialLoader.loading(true);
@@ -91,12 +95,11 @@ public class LoginPresenter implements Presenter
 			}
 
 		});
-		display.getBtnSignUp().addClickHandler(new ClickHandler() {
+		display.getlinkSignUp().addClickHandler(new ClickHandler() {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-	             Window.alert("window open");
-				// TODO Auto-generated method stub
+				signInpopup.close();
 				SignUpView signUpView = new SignUpView();
 				MaterialWindow signUpWindow = new MaterialWindow();
 				signUpWindow.add(signUpView);
@@ -107,10 +110,11 @@ public class LoginPresenter implements Presenter
 	}
 
 	public void signIn(String userName, String password) {
+		 signInpopup.close();
 		final LoadingPopup loadingPopup = new LoadingPopup();
 		loadingPopup.display();
 		rpcService.signIn(userName, password, new AsyncCallback<User>()
-
+              
 		{
 			public void onFailure(Throwable ex) {
 				Window.alert(ex.getStackTrace().toString());

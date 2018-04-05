@@ -8,6 +8,7 @@
 <m:MaterialNavSection float="RIGHT">
 <m:MaterialLink iconType="ACCOUNT_CIRCLE" iconPosition="LEFT" text="Sign in" textColor="WHITE" waves="LIGHT" ui:field="signin"/>
 <m:MaterialLink iconType="AUTORENEW" iconPosition="LEFT" text="Refresh" textColor="WHITE" waves="LIGHT"/>
+ 
 <m:MaterialTooltip text="menu">
 <m:MaterialLink iconType="SEARCH" textColor="WHITE" waves="LIGHT"></m:MaterialLink>
 </m:MaterialTooltip>

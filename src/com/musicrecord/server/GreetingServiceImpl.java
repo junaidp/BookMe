@@ -49,13 +49,6 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
     }
 
 	@Override
-	public ArrayList<Reviews> fetchReviews() throws Exception {
-		return musicHelper.fetchReviews();
-	}
-
-
-
-	@Override
 	public String signup(User user) throws Exception {
 		return musicHelper.signup(user);
 		 
@@ -66,6 +59,25 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		// TODO Auto-generated method stub
 		return musicHelper.saveReview(reviews);
 	}
-	
+
+	@Override
+	public ArrayList<Reviews> fetchReviews(HashMap<String, String> requestInfo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Reviews> fetchReviews() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String bookUser(User users) {
+		// TODO Auto-generated method stub
+		return musicHelper.bookUser(users);
+	}
+
+
+ 
 
 }

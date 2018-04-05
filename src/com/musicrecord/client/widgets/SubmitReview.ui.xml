@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:gwt.material.design.client.ui" xmlns:r="urn:import:gwt.material.design.addins.client.rating" xmlns:richeditor="urn:import:gwt.material.design.addins.client.richeditor">
+	<ui:style>
+	.important {
+		font-weight: bold;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+	<d:MaterialRow>
+	<r:MaterialRating ui:field="ratings" value="3"></r:MaterialRating>
+	</d:MaterialRow>
+	
+	<d:MaterialRow>
+	<richeditor:MaterialRichEditor ui:field="optionRichEditor" height="200px"  placeholder="Add your comments"></richeditor:MaterialRichEditor>
+	</d:MaterialRow>
+	
+	<d:MaterialRow>
+	<d:MaterialButton ui:field="button"  waves="LIGHT" iconType="POLYMER" iconPosition="RIGHT" size="MEDIUM" text="Submit"></d:MaterialButton>
+	</d:MaterialRow>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -25,9 +25,18 @@ public interface GreetingServiceAsync {
 
     void fetchCategories(AsyncCallback<ArrayList<Category>> callback);
     
-    void fetchReviews(AsyncCallback<ArrayList<Reviews>> asyncCallback);
+    void fetchReviews(HashMap<String, String> requestInfo,AsyncCallback<ArrayList<Reviews>> asyncCallback);
     
     void saveReviews(Reviews review , AsyncCallback<String> callback);
 
 	void signup(User user, AsyncCallback<String> callback);
+
+	void fetchReviews(AsyncCallback<ArrayList<Reviews>> callback);
+
+	void bookUser(User users, AsyncCallback<String> callback);
+
+	 
+
+
+	
 }

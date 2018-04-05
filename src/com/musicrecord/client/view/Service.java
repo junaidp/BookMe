@@ -1,4 +1,6 @@
 package com.musicrecord.client.view;
+import java.util.HashMap;
+
 import com.gargoylesoftware.htmlunit.javascript.host.intl.V8BreakIterator;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -14,6 +16,8 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.musicrecord.client.GreetingService;
+import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Records;
 import com.sun.java.swing.plaf.windows.resources.windows;
@@ -78,7 +82,24 @@ public class Service extends Composite{
 		this.imageTitle.setText(records.getArtist());
 		this.label.setText(records.getMusicDescription());
 		link1.setText("Book");
-		link2.setText("Review");
+		link2.setText("Review");		
+		rating.setValue(getAvgReview(records));
+		link1.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+			
+				
+					MaterialWindow window1 = new MaterialWindow();
+					BookMe objDesign = new BookMe();
+					window1.add(objDesign);
+					window1.open();
+					
+
+					
+				
+			}
+		});
 		link2.addClickHandler(new ClickHandler() {
 			
 			@Override
@@ -94,5 +115,23 @@ public class Service extends Composite{
 		});	
 		
 	}
+	public int getAvgReview(Records records) {
+		int avgReview = 0;
+		int sumReview = 0;
+		for(int i = 0 ; i<records.getReviews().size() ; i++)
+		{
+         sumReview = sumReview + records.getReviews().get(i).getReviews();
+		}
+		avgReview = sumReview/records.getReviews().size();
+		return avgReview;
+	}
 
+	public MaterialRating getRating() {
+		return rating;
+	}
+
+
+	public void setRating(MaterialRating i) {
+		this.rating = i;
+	}
 }

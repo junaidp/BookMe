@@ -20,7 +20,6 @@ import com.musicrecord.client.presenter.RecordsPresenter;
 import com.musicrecord.client.view.Main;
 import com.musicrecord.client.view.HeaderView;
 import com.musicrecord.client.view.LoginDesign;
-import com.musicrecord.client.view.LoginView;
 import com.musicrecord.client.view.RecordsAdminView;
 import com.musicrecord.client.view.RecordsUserView;
 import com.musicrecord.shared.User;
@@ -102,12 +101,12 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 //		History.newItem("login");
 //	    }
 
-	    if (token.equals("login")) {
-		presenter = new LoginPresenter(rpcService, eventBus, new LoginDesign());
-		presenter.go(container);
-	    }
+	//    if (token.equals("login")) {
+		//presenter = new LoginPresenter(rpcService, eventBus,window1, new LoginDesign());
+		//presenter.go(container);
+	   // }
 
-	    else if (token.equals("main")) {
+ if (token.equals("main")) {
 		presenter = new MainPresenter(rpcService, eventBus, new Main());
 		presenter.go(container);
 	    }

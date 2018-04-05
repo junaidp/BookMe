@@ -1,6 +1,7 @@
 package com.musicrecord.shared;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Records implements Serializable {
     private String artist;
 
     @JoinColumn(name = "categoryid")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Category category;
     
     @Column(name = "displayimage")
@@ -38,11 +39,14 @@ public class Records implements Serializable {
 
     @Column(name = "description")
     private String musicDescription;
+    
+    @Transient
+    private ArrayList<Reviews> reviews;
    
 	@Transient
     private int count;
 
-    public int getRecords() {
+    public int getRecordId() {
 	return records;
     }
 
@@ -97,5 +101,15 @@ public class Records implements Serializable {
 	public void setMusicDescription(String musicDescription) {
 		this.musicDescription = musicDescription;
 	}
+
+	public ArrayList<Reviews> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(ArrayList<Reviews> reviews) {
+		this.reviews = reviews;
+	}
+
+	
 
 }

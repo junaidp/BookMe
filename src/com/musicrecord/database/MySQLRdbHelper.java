@@ -16,6 +16,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Category;
+import com.musicrecord.shared.HibernateDetachUtility;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
@@ -67,6 +68,7 @@ public class MySQLRdbHelper {
     	    session = sessionFactory.openSession();
 
     	    Criteria crit = session.createCriteria(Category.class);
+    	    if(keyWord.length() > 0)
     	    crit.add(Restrictions.eq("categoryname", keyWord));
     	
     	    List rsList = crit.list();
@@ -128,9 +130,18 @@ public class MySQLRdbHelper {
 	    List rsList = crit.list();
 	    for (Iterator it = rsList.iterator(); it.hasNext();) {
 		Records record = (Records) it.next();
+		ArrayList<Reviews> review = fetchReviews(record.getRecordId());
 		record.setCount(count);
-		listRecords.add(record);
+		record.setReviews(review);
+		// HibernateDetachUtility.nullOutUninitializedFields(review,
+			//	    HibernateDetachUtility.SerializationType.SERIALIZATION);
 
+		// HibernateDetachUtility.nullOutUninitializedFields(record,
+			//	    HibernateDetachUtility.SerializationType.SERIALIZATION);
+
+			
+		listRecords.add(record);
+		
 	    }
 	    return listRecords;
 
@@ -190,6 +201,7 @@ public class MySQLRdbHelper {
 	    throw new Exception("Exception occured in Delete Record");
 	} finally {
 	    session.close();
+
 	}
     }
 
@@ -221,7 +233,7 @@ public class MySQLRdbHelper {
 
     }
     
-	public ArrayList<Reviews> fetchReviews() throws Exception {
+	public ArrayList<Reviews> fetchReviews(int recordId) throws Exception {
 		Session session = null;
 
 		ArrayList<Reviews> listReviews = new ArrayList<Reviews>();
@@ -229,19 +241,26 @@ public class MySQLRdbHelper {
 		    session = sessionFactory.openSession();
 
 		    Criteria crit = session.createCriteria(Reviews.class);
-
+		    crit.createAlias("recordId", "rec");
+		    crit.createAlias("rec.category", "catre");
+		    crit.add(Restrictions.eq("rec.records", recordId));
 		    List csList = crit.list();
 
 		    for (Iterator it = csList.iterator(); it.hasNext();) {
 
 			Reviews reviews = (Reviews) it.next();
-			listReviews.add(reviews);
+		    HibernateDetachUtility.nullOutUninitializedFields(reviews,
+				    HibernateDetachUtility.SerializationType.SERIALIZATION);
 
+			listReviews.add(reviews);
+			
 		    }
+		   // if(listReviews.size()<1) return null;
 		    return listReviews;
+		   
 
 		} catch (Exception ex) {
-		    logger.warn(String.format("Exception occured in Fetch Categories", ex.getMessage()), ex);
+		    logger.warn(String.format("Exception occured in Fetch Reviews", ex.getMessage()), ex);
 		    throw new Exception("Exception occured in fetchCategories");
 		} finally {
 		    session.close();
@@ -285,5 +304,25 @@ public class MySQLRdbHelper {
 	    session.close();
 	}
     }
+public String BookMe(String s) throws Exception{
+	Session session = null;
+	try{
+		session = sessionFactory.openSession();
+		return "rpc is called";
+	}	
+		catch (Exception ex) {
+		    logger.warn(String.format("Exception occured in save Reviews", ex.getMessage()), ex);
+		    throw new Exception("records not saved");
+		} finally {
+		    session.close();
+		}
 
+	
+
+	
+}
+public String bookUser(User users ) throws Exception {
+	return "From server";
+
+}
 }

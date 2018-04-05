@@ -58,7 +58,8 @@ public class MainPresenter implements Presenter
 			@Override
 			public void onSelection(SelectionEvent<Suggestion> event) {
 				
-				fetchRecords(event.getSelectedItem().getDisplayString()+"");					
+				fetchRecords(event.getSelectedItem().getDisplayString()+"");		
+				fetchReviews(event.getSelectedItem().getDisplayString()+"");
 			}
 		});
 	}
@@ -78,6 +79,7 @@ public class MainPresenter implements Presenter
 
 			@Override
 			public void onFailure(Throwable caught) {
+				Window.alert(caught.getLocalizedMessage());
 				Window.alert("failed to Fetch Records");
 
 			}
@@ -94,17 +96,17 @@ public class MainPresenter implements Presenter
 			display.getContainer().add(service);
 		}
 	}
-	public void fetchReviews(){
+	public void fetchReviews(String data){
 		HashMap<String, String> requestInfo = new HashMap<String, String>();
-		requestInfo.put("keyWord", "");
+		requestInfo.put("keyWord",data );
 		requestInfo.put("searchBy", "");
 		
-	    rpcService.fetchReviews(new AsyncCallback<ArrayList<Reviews>>() {
+	    rpcService.fetchReviews(requestInfo,new AsyncCallback<ArrayList<Reviews>>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
 				// TODO Auto-generated method stub
-				
+				Window.alert("failed to Fetch Reviews");
 			}
 
 			@Override

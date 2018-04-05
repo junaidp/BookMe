@@ -49,10 +49,12 @@ public class MusicHelper {
 	return rdbHelper.fetchCategories();//save review method rehta
     }
 
-	public ArrayList<Reviews> fetchReviews() throws Exception {
-		return rdbHelper.fetchReviews();
-	}
-    public String saveReview(Reviews reviews) throws Exception {
-	return rdbHelper.saveReview(reviews);
+	 public String saveReview(Reviews reviews) throws Exception {
+		 return rdbHelper.saveReview(reviews);
     }
+	public String bookUser(User users)  {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	 
 }
