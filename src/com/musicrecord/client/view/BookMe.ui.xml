@@ -1,72 +1,120 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui"
-	 xmlns:m="urn:import:gwt.material.design.client.ui"
-	  xmlns:ma="urn:import:gwt.material.design.addins.client"
-	 
-	 xmlns:m.addins="urn:import:gwt.material.design.addins.client">
-	  
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:ma="urn:import:gwt.material.design.addins.client" xmlns:m.addins="urn:import:gwt.material.design.addins.client">
+
 	<ui:style>
-	.imgProfile{
- 
-   width: 15%;
-
-   border: 5px solid #fff;
- }
+	.imgProfile {
+		  width: 15%;
+		  border: 5px solid #fff;
+	}
 	</ui:style>
-	 
-	<m:MaterialRow  title="BookMe" backgroundColor="GREY_LIGHTEN_4" >
-	<m:MaterialPanel >
-	 
-	 	 	 		 	 
-	 <m:MaterialRow>
-    <m:MaterialColumn grid="s2 m4 l12">
-<m:MaterialImage url="https://snmc.com/wp-content/uploads/2016/10/facebook-icon-circle.png" width="15%" height="5%"   ></m:MaterialImage>	
-	
-	</m:MaterialColumn>
-	 <m:MaterialColumn>
-		 	 		 	<m:MaterialLabel text="I am hamza, software engineer........................."   />
-	
-	</m:MaterialColumn>	
-	</m:MaterialRow>
-	
 
-	<m:MaterialRow>
-	<m:MaterialColumn>
-	<ma:rating.MaterialRating textColor="AMBER" value="3"/>
-	 	 </m:MaterialColumn>
-	 	 </m:MaterialRow>
-	 	 <m:MaterialRow>
-	 	 <m:MaterialPanel>
-	<m:MaterialTextArea ui:field="txtArea" label="About" iconType="FACE"> </m:MaterialTextArea>
+	<m:MaterialPanel title="New Booking" grid="s14">
+
+
+
+		<m:MaterialRow>
+
+			<m:MaterialColumn grid="s4 ">
+				<m:MaterialImage
+					url="https://snmc.com/wp-content/uploads/2016/10/facebook-icon-circle.png"
+					width="100%" height="5%"></m:MaterialImage>
+
+			</m:MaterialColumn>
+
+
+			<m:MaterialColumn grid="s8">
+				<m:MaterialRow>
+					<m:MaterialColumn>
+						<m:MaterialIcon iconType="GROUP"></m:MaterialIcon>
+					</m:MaterialColumn>
+
+					<m:MaterialLabel text=" ABOUT :" fontSize="15px"></m:MaterialLabel>
+				</m:MaterialRow>
+				<m:MaterialLabel
+					text="I am hamza, software engineer hell ha kdfjk bsk bsdk ksdfk kjhdf  .." />
+			</m:MaterialColumn>
+
+		</m:MaterialRow>
+		<m:MaterialRow>
+
+			<ma:rating.MaterialRating textColor="BLUE"
+				value="3" />
+		</m:MaterialRow>
+
+
+		<m:MaterialPanel>
+			<m:MaterialRow>
+				<m:MaterialColumn grid="s6">
+					<ma:timepicker.MaterialTimePicker
+						ui:field="tp" placeholder="Select Time" />
+				</m:MaterialColumn>
+				<m:MaterialColumn grid="s6">
+					<m:MaterialDatePicker autoClose="true"
+						container="BODY" ui:field="datePicker" placeholder="Select date to book"></m:MaterialDatePicker>
+				</m:MaterialColumn>
+			</m:MaterialRow>
+		</m:MaterialPanel>
+		<m:MaterialRow>
+			<m:MaterialColumn grid="s8">
+				<m:MaterialRow>
+
+					<m:MaterialColumn>
+						<m:MaterialButton ui:field="btnBookMe" waves="LIGHT"
+							text="Book ME" />
+
+					</m:MaterialColumn>
+					<m:MaterialColumn>
+						<m:MaterialButton ui:field="btnMessage" waves="LIGHT"
+							text="Message" />
+
+					</m:MaterialColumn>
+				</m:MaterialRow>
+			</m:MaterialColumn>
+
+			<m:MaterialColumn grid="s4 ">
+				<m:MaterialRow>
+					<m:MaterialColumn>
+						<m:MaterialIcon iconType="GROUP"></m:MaterialIcon>
+					</m:MaterialColumn>
+					<m:MaterialLabel text="Contact US" fontSize="15px"></m:MaterialLabel>
+
+				</m:MaterialRow>
+				<m:MaterialRow>
+					<m:MaterialColumn>
+						<m:MaterialIcon iconType="PHONE" iconSize="TINY"></m:MaterialIcon>
+					</m:MaterialColumn>
+					<m:MaterialLabel text="+32333-1234567" />
+
+
+				</m:MaterialRow>
+
+
+				<m:MaterialRow>
+					<m:MaterialColumn>
+						<m:MaterialIcon iconType="PHONE" iconSize="TINY"></m:MaterialIcon>
+					</m:MaterialColumn>
+					<m:MaterialLabel text="+32333-1234567" />
+
+
+				</m:MaterialRow>
+			</m:MaterialColumn>
+		</m:MaterialRow>
+
+
+		<m:MaterialRow>
+			<m:MaterialColumn>
+				<m:MaterialIcon iconType="MOTORCYCLE" iconSize="TINY"></m:MaterialIcon>
+			</m:MaterialColumn>
+			<m:MaterialLabel text="I can visit you at your place" />
+
+		</m:MaterialRow>
+
+
+
 	</m:MaterialPanel>
-	
-	</m:MaterialRow>
-	
 
- <m:MaterialRow>
-   <m:MaterialColumn>
-    <m:MaterialColumn>
-	    	<m:MaterialLabel text="I can visit you at.."   />
-	    	<m:MaterialLabel text="Hamzariaz1994@gmail.com"   />
-	     </m:MaterialColumn>	
-  </m:MaterialColumn>
- 
-  <m:MaterialColumn>
-     
-      	<m:MaterialButton ui:field="btnMessage" waves="LIGHT" text="Message"  />
-      	 <m:MaterialColumn>
-      	
-      	<m:MaterialButton ui:field="btnBookMe" waves="LIGHT" text="Book ME" />
-   </m:MaterialColumn>
-  
-     </m:MaterialColumn>
-   </m:MaterialRow>     
-		</m:MaterialPanel>     
-	
-    </m:MaterialRow>	
-	
-	
 
 </ui:UiBinder> 

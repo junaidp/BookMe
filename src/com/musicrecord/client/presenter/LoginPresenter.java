@@ -20,6 +20,7 @@ import com.musicrecord.client.view.SignUpView;
 import com.musicrecord.shared.User;
 import com.sun.java.swing.plaf.windows.resources.windows;
 
+import gwt.material.design.addins.client.richeditor.MaterialRichEditor;
 import gwt.material.design.addins.client.window.MaterialWindow;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialLabel;

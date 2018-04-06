@@ -52,9 +52,9 @@ public class MusicHelper {
 	 public String saveReview(Reviews reviews) throws Exception {
 		 return rdbHelper.saveReview(reviews);
     }
-	public String bookUser(User users)  {
+	public String bookUser(User users) throws Exception  {
 		// TODO Auto-generated method stub
-		return null;
+		return rdbHelper.bookUser(users);
 	}
 	 
 }

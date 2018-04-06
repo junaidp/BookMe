@@ -72,7 +72,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		return null;
 	}
 	@Override
-	public String bookUser(User users) {
+	public String bookUser(User users) throws Exception {
 		// TODO Auto-generated method stub
 		return musicHelper.bookUser(users);
 	}

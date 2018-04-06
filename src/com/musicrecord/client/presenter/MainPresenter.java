@@ -73,7 +73,7 @@ public class MainPresenter implements Presenter
 
 			@Override
 			public void onSuccess(ArrayList<Records> result) {
-
+				if(result!=null)
 				cardsDisplay(result);
 			}
 

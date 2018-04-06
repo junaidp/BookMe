@@ -220,9 +220,11 @@ public class RecordsPresenter implements Presenter
 
 	    @Override
 	    public void onSuccess(ArrayList<Records> result) {
+	    	if(result != null){
 		display.getCellTable().setRowData(start, result);
 		display.getCellTable().setRowCount(result.get(0).getCount());
-	    }
+	    	}
+	    	}
 
 	    @Override
 	    public void onFailure(Throwable caught) {

@@ -72,6 +72,8 @@ public class MySQLRdbHelper {
     	    crit.add(Restrictions.eq("categoryname", keyWord));
     	
     	    List rsList = crit.list();
+    	    if(rsList.size()<=0)
+    	    	return 0;
     	    for (Iterator it = rsList.iterator(); it.hasNext();) {
     		category = (Category) it.next();
     		System.out.println(category.getCategoryid());
@@ -98,6 +100,8 @@ public class MySQLRdbHelper {
 
 	// GET ID FROM NAME..
 	int categoryId = getCategoryID(keyWord);
+	if(categoryId == 0)
+		return null;
 	ArrayList<Records> listRecords = new ArrayList<Records>();
 	try {
 	    session = sessionFactory.openSession();
