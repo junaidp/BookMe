@@ -4,7 +4,7 @@
 	xmlns:m="urn:import:gwt.material.design.client.ui">
 
 <m:MaterialNavBar>
-<m:MaterialNavBrand href="#Test" float="LEFT" text="Music Record"/>
+<m:MaterialNavBrand href="#Test" float="LEFT" text="Book Me"  />
 <m:MaterialNavSection float="RIGHT">
 <m:MaterialLink iconType="ACCOUNT_CIRCLE" iconPosition="LEFT" text="Sign in" textColor="WHITE" waves="LIGHT" ui:field="signin"/>
 <m:MaterialLink iconType="AUTORENEW" iconPosition="LEFT" text="Refresh" textColor="WHITE" waves="LIGHT"/>

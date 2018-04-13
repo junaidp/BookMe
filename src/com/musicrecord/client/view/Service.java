@@ -82,7 +82,7 @@ public class Service extends Composite{
 		this.imageTitle.setText(record.getArtist());
 		this.label.setText(record.getMusicDescription());
 		link1.setText("Book");
-		link2.setText("Review");		
+	    link2.setText("Review");		
 		rating.setValue(getAvgReview(record));
 		link1.addClickHandler(new ClickHandler() {
 			

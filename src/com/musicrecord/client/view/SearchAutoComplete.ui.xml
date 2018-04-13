@@ -6,7 +6,7 @@
 
 	<g:HTMLPanel>
 	 <m:MaterialColumn grid="s12 m12 l6">
-<a:MaterialAutoComplete ui:field="acList" placeholder="Music"></a:MaterialAutoComplete>
+<a:MaterialAutoComplete ui:field="acList" placeholder="Search"></a:MaterialAutoComplete>
 </m:MaterialColumn>
 	</g:HTMLPanel>
 </ui:UiBinder> 
