@@ -1,6 +1,7 @@
 package com.musicrecord.server;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -71,10 +72,11 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
-	public String bookUser(User users) throws Exception {
-		// TODO Auto-generated method stub
-		return musicHelper.bookUser(users);
+	public String bookUser(Records record, Date bookDate, Date bookTime) {
+		
+		return musicHelper.bookUser(record,bookDate,bookTime);
 	}
 
 

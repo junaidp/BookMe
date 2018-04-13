@@ -1,6 +1,7 @@
 package com.musicrecord.client;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -33,7 +34,9 @@ public interface GreetingService extends RemoteService {
 	String saveReviews(Reviews reviews) throws Exception;
 
 	ArrayList<Reviews> fetchReviews(HashMap<String, String> requestInfo);
+
+	String bookUser(Records record, Date bookDate, Date bookTime);
 	
-	String bookUser(User users) throws Exception;
+	//String bookUser(User users);
 }
 

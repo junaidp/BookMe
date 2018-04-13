@@ -28,7 +28,7 @@
 			<m:MaterialColumn grid="s8">
 				<m:MaterialRow>
 					<m:MaterialColumn>
-						<m:MaterialIcon iconType="GROUP"></m:MaterialIcon>
+						<m:MaterialIcon iconType="FACE"></m:MaterialIcon>
 					</m:MaterialColumn>
 
 					<m:MaterialLabel text=" ABOUT :" fontSize="15px"></m:MaterialLabel>
@@ -49,7 +49,7 @@
 			<m:MaterialRow>
 				<m:MaterialColumn grid="s6">
 					<ma:timepicker.MaterialTimePicker
-						ui:field="tp" placeholder="Select Time" />
+						ui:field="timePicker" placeholder="Select Time" />
 				</m:MaterialColumn>
 				<m:MaterialColumn grid="s6">
 					<m:MaterialDatePicker autoClose="true"
@@ -72,6 +72,13 @@
 
 					</m:MaterialColumn>
 				</m:MaterialRow>
+					<m:MaterialRow >
+			<m:MaterialColumn   >
+				<m:MaterialIcon iconType="MOTORCYCLE" iconSize="TINY" ></m:MaterialIcon>
+			</m:MaterialColumn>
+			<m:MaterialLabel text="you can visit  my place at shop no # street no #" />
+
+		</m:MaterialRow>
 			</m:MaterialColumn>
 
 			<m:MaterialColumn grid="s4 ">
@@ -94,9 +101,9 @@
 
 				<m:MaterialRow>
 					<m:MaterialColumn>
-						<m:MaterialIcon iconType="PHONE" iconSize="TINY"></m:MaterialIcon>
+						<m:MaterialIcon iconType="EMAIL" iconSize="TINY"></m:MaterialIcon>
 					</m:MaterialColumn>
-					<m:MaterialLabel text="+32333-1234567" />
+					<m:MaterialLabel text="HamzaRiaz1994 @gmail.com" />
 
 
 				</m:MaterialRow>
@@ -104,13 +111,7 @@
 		</m:MaterialRow>
 
 
-		<m:MaterialRow>
-			<m:MaterialColumn>
-				<m:MaterialIcon iconType="MOTORCYCLE" iconSize="TINY"></m:MaterialIcon>
-			</m:MaterialColumn>
-			<m:MaterialLabel text="I can visit you at your place" />
-
-		</m:MaterialRow>
+	
 
 
 

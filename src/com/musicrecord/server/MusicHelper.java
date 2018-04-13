@@ -1,6 +1,7 @@
 package com.musicrecord.server;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.springframework.context.ApplicationContext;
@@ -52,9 +53,11 @@ public class MusicHelper {
 	 public String saveReview(Reviews reviews) throws Exception {
 		 return rdbHelper.saveReview(reviews);
     }
-	public String bookUser(User users) throws Exception  {
+
+
+	public String bookUser(Records record, Date bookDate, Date bookTime) {
 		// TODO Auto-generated method stub
-		return rdbHelper.bookUser(users);
+		return rdbHelper.bookUser(record,bookDate,bookTime);
 	}
 	 
 }

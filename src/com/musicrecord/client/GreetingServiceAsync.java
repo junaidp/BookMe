@@ -1,6 +1,7 @@
 package com.musicrecord.client;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -33,7 +34,10 @@ public interface GreetingServiceAsync {
 
 	void fetchReviews(AsyncCallback<ArrayList<Reviews>> callback);
 
-	void bookUser(User users, AsyncCallback<String> callback);
+	
+	//void bookUser(User users, AsyncCallback<String> asyncCallback);
+
+	void bookUser(Records record, Date bookDate, Date bookTime, AsyncCallback<String> asyncCallback);
 
 	 
 

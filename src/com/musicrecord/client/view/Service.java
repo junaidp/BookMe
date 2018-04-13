@@ -75,15 +75,15 @@ public class Service extends Composite{
 	}
 	
 
-	public Service(Records records) {
+	public Service(Records record) {
 		//.getDisplayImage() , result.get(i).getArtist(), result.get(i).getMusicDescription(), "Book" , "Reviews"
 		initWidget(uiBinder.createAndBindUi(this));
-		image.setUrl(records.getDisplayImage());
-		this.imageTitle.setText(records.getArtist());
-		this.label.setText(records.getMusicDescription());
+		image.setUrl(record.getDisplayImage());
+		this.imageTitle.setText(record.getArtist());
+		this.label.setText(record.getMusicDescription());
 		link1.setText("Book");
 		link2.setText("Review");		
-		rating.setValue(getAvgReview(records));
+		rating.setValue(getAvgReview(record));
 		link1.addClickHandler(new ClickHandler() {
 			
 			@Override
@@ -91,7 +91,7 @@ public class Service extends Composite{
 			
 				
 					MaterialWindow window1 = new MaterialWindow();
-					BookMe objDesign = new BookMe();
+					BookMe objDesign = new BookMe(record);
 					window1.add(objDesign);
 					window1.open();
 					
@@ -107,7 +107,7 @@ public class Service extends Composite{
 				// TODO Auto-generated method stub
 				
 				MaterialWindow windowSubmitReviews = new MaterialWindow();
-				SubmitReview submitReview = new SubmitReview(records);
+				SubmitReview submitReview = new SubmitReview(record);
 				windowSubmitReviews.add(submitReview);
 				windowSubmitReviews.open();
 				windowSubmitReviews.setTitle("Comments");

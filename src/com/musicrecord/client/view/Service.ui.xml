@@ -27,9 +27,9 @@
 		<m:MaterialCardAction>
 
 			<m:MaterialLink ui:field="link1"/>
-			<m:MaterialLink ui:field="link2"/>
+		 	<m:MaterialLink ui:field="link2" visible="false"/>  
 			
-<r:MaterialRating ui:field="rating" value="3"></r:MaterialRating>
+<r:MaterialRating ui:field="rating" value="3" editable="false"></r:MaterialRating>
 		</m:MaterialCardAction>
 
 	</m:MaterialCard>
