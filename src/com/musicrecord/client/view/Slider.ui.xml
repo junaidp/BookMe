@@ -3,7 +3,7 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:gwt.material.design.client.ui">
 
-<m:MaterialSlider ui:field="slider" fullscreen="false">
+<m:MaterialSlider ui:field="slider" fullscreen="false" visible="false">
 
 <m:MaterialSlideItem>
 </m:MaterialSlideItem>
