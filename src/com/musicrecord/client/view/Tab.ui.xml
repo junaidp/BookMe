@@ -6,52 +6,30 @@
 	<g:HTMLPanel>
 	<m:MaterialRow>
 	<m:MaterialColumn grid="s12">
-	<m:MaterialTab ui:field="tab" indicatorColor="YELLOW" shadow="1">
+	<m:MaterialTab ui:field="tab" indicatorColor="YELLOW" shadow="1" grid = "s12">
 	<m:MaterialTabItem waves="YELLOW" >
-	<m:MaterialLink ui:field="tab1" text="FOOTER" href="#tab1">
+	<m:MaterialLink ui:field="tab1" text="My Bookings" href="#tab1" textColor="WHITE" waves="LIGHT">
 	</m:MaterialLink>
 	</m:MaterialTabItem>
 	
-	<m:MaterialTabItem waves="YELLOW" >
-	<m:MaterialLink text="LOGIN" href="#tab2" >
-	</m:MaterialLink>
-	</m:MaterialTabItem>
+	
 	
 	<m:MaterialTabItem waves="YELLOW">
-	<m:MaterialLink text="SEARCH" href="#tab3"></m:MaterialLink>
+	<m:MaterialLink text="SEARCH" iconType= "SEARCH" href="#tab2" textColor="WHITE" waves="LIGHT"></m:MaterialLink>
 	</m:MaterialTabItem>
-	
-	<m:MaterialTabItem waves="YELLOW">
-	<m:MaterialLink text="NAVBAR" href="#tab4"></m:MaterialLink>
-	</m:MaterialTabItem>
-	
-	<m:MaterialTabItem waves="YELLOW">
-	<m:MaterialLink text="SLIDER" href="#tab5"></m:MaterialLink>
-	</m:MaterialTabItem>
-	
 	</m:MaterialTab>
 	</m:MaterialColumn>
 	
-	<m:MaterialColumn m:id="tab1" grid="s12">
-		<v:Footer></v:Footer>
+	<m:MaterialColumn m:id="tab1" grid="s12" ui:field="tab1Container">
+	
 	</m:MaterialColumn>
+	
+
 	
 	<m:MaterialColumn m:id="tab2" grid="s12">
-	    <v:LoginDesign></v:LoginDesign>
+	    <v:SearchAutoComplete></v:SearchAutoComplete>
 	</m:MaterialColumn>
-	
-	<m:MaterialColumn m:id="tab3" grid="s12">
-	    <v:NavBarSearch></v:NavBarSearch>
-	</m:MaterialColumn>
-	
-	<m:MaterialColumn m:id="tab4" grid="s12">
-	  
-	</m:MaterialColumn>
-	
-	<m:MaterialColumn m:id="tab5" grid="s12">
-	   <v:Slider></v:Slider>
-	</m:MaterialColumn>
-	
+
 	</m:MaterialRow>
 	</g:HTMLPanel>
 </ui:UiBinder> 

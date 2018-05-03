@@ -17,6 +17,8 @@ import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.view.LoadingPopup;
 import com.musicrecord.client.view.SignUpView;
+import com.musicrecord.client.view.Tab;
+import com.musicrecord.client.view.UserView;
 import com.musicrecord.shared.User;
 import com.sun.java.swing.plaf.windows.resources.windows;
 
@@ -75,7 +77,7 @@ public class LoginPresenter implements Presenter
 	
 	private void bind() {
 
-		RootPanel.get("loadingMessage").setVisible(false);
+		//RootPanel.get("loadingMessage").setVisible(false);
 		display.getBtnSubmit().addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 						MaterialLoader.loading(true);
@@ -84,13 +86,20 @@ public class LoginPresenter implements Presenter
 
 				if (display.getTxtUserName().getText().equals("") || display.getTxtPassword().getText().equals("")) {
 					display.getLblError().setVisible(true);
+					
+					
 					display.getLblError().setText("username / password cannot be empty");
+				
 					MaterialLoader.loading(false);
 					MaterialLoader.progress(false);
-				} else {
+				} 
+			 
+				else {
 					
 					signIn(display.getTxtUserName().getText(), display.getTxtPassword().getText());
-
+					//UserView userView = new UserView();
+					
+				
 				}
 				
 			}
@@ -130,16 +139,20 @@ public class LoginPresenter implements Presenter
 				MaterialLoader.loading(false);
 				MaterialLoader.progress(false);
 				if (user != null) {
-
-					display.getLblError().setVisible(false);
-					if (user.getRoleId().getRoleId() == 1) {
-
-						eventBus.fireEvent(new RecordsUserEvent(user));
-
-					} else {
-						eventBus.fireEvent(new RecordsAdminEvent(user));
-					}
+					Tab tab  = new Tab();
+					MaterialWindow signUpWindow = new MaterialWindow();
+					signUpWindow.add(tab);
+					signUpWindow.open();
+					//display.getLblError().setVisible(false);
+//					if (user.getRoleId().getRoleId() == 1) {
+//
+//						//eventBus.fireEvent(new RecordsUserEvent(user));
+//
+//					} else {
+//						//eventBus.fireEvent(new RecordsAdminEvent(user));
+//					}
 				} else {
+					Window.alert("iusername invalid");
 					display.getLblError().setVisible(true);
 					display.getLblError().setText("username / password invalid");
 				}

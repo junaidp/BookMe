@@ -57,6 +57,14 @@
 				</m:MaterialColumn>
 			</m:MaterialRow>
 		</m:MaterialPanel>
+		
+		<!-- MaterialText area -->
+		<m:MaterialRow>
+		<m:MaterialColumn grid="s12">
+		<m:MaterialTextArea placeholder="Message" ui:field="txtArea">
+		</m:MaterialTextArea>
+		</m:MaterialColumn>
+		</m:MaterialRow>
 		<m:MaterialRow>
 			<m:MaterialColumn grid="s8">
 				<m:MaterialRow>

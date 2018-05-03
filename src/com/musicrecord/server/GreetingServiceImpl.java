@@ -13,6 +13,7 @@ import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
+import com.musicrecord.shared.UserBooking;
 
 /**
  * The server-side implementation of the RPC service.
@@ -73,11 +74,27 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		return null;
 	}
 
+
+
 	@Override
-	public String bookUser(Records record, Date bookDate, Date bookTime) {
-		
-		return musicHelper.bookUser(record,bookDate,bookTime);
+	public String bookUser(UserBooking userBooking) throws Exception {
+		// TODO Auto-generated method stub
+		return musicHelper.bookUser(userBooking);
 	}
+
+	@Override
+	public ArrayList<UserBooking> fetchUserBooking() throws Exception {
+		// TODO Auto-generated method stub
+		return musicHelper.fetchUserBooking();
+	}
+
+
+
+//	@Override
+//	public String bookUser(String message, Date bookDate, Date bookTime) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 
  

@@ -21,6 +21,7 @@ import com.musicrecord.shared.HibernateDetachUtility;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
+import com.musicrecord.shared.UserBooking;
 
 public class MySQLRdbHelper {
 
@@ -325,8 +326,52 @@ public class MySQLRdbHelper {
 	}
 
 
-	public String bookUser(Records record, Date bookDate, Date bookTime) {
-		// TODO Auto-generated method stub
-		return "From server";
+
+	public String bookUser(UserBooking userBooking) throws Exception {
+		Session session = null;
+
+		try {
+			session = sessionFactory.openSession();
+			session.saveOrUpdate(userBooking);
+			session.flush();
+			return "Booking Successfull";
+
+		} catch (Exception ex) {
+			logger.warn(String.format("Exception occured in save record", ex.getMessage()), ex);
+			throw new Exception("Exception occured in save record");
+		} finally {
+			session.close();
+		}
+
+ 
 	}
+
+	public ArrayList<UserBooking> fetchUserBooking() throws Exception {
+		// TODO Auto-generated method stub
+		Session session = null;
+
+		ArrayList<UserBooking> listUserBooking = new ArrayList<UserBooking>();
+		try {
+			session = sessionFactory.openSession();
+
+			Criteria crit = session.createCriteria(UserBooking.class);
+
+			List csList = crit.list();
+
+			for (Iterator it = csList.iterator(); it.hasNext();) {
+
+				UserBooking userBooking = (UserBooking) it.next();
+				listUserBooking.add(userBooking);
+
+			}
+			return listUserBooking;
+
+		} catch (Exception ex) {
+			logger.warn(String.format("Exception occured in Fetch UserBooking", ex.getMessage()), ex);
+			throw new Exception("Exception occured in fetchUserBooking");
+		} finally {
+			session.close();
+		}
+	}
+
 }

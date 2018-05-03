@@ -78,7 +78,11 @@ public class Service extends Composite{
 	public Service(Records record) {
 		//.getDisplayImage() , result.get(i).getArtist(), result.get(i).getMusicDescription(), "Book" , "Reviews"
 		initWidget(uiBinder.createAndBindUi(this));
+		
 		image.setUrl(record.getDisplayImage());
+		
+		
+		
 		this.imageTitle.setText(record.getArtist());
 		this.label.setText(record.getMusicDescription());
 		link1.setText("Book");
@@ -91,7 +95,7 @@ public class Service extends Composite{
 			
 				
 					MaterialWindow window1 = new MaterialWindow();
-					BookMe objDesign = new BookMe(record);
+					BookMe objDesign = new BookMe(record.getRecordId());
 					window1.add(objDesign);
 					window1.open();
 					

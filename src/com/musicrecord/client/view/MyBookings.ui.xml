@@ -1,0 +1,48 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui" xmlns:r="urn:import:gwt.material.design.addins.client.rating">
+	
+	<g:HTMLPanel>
+		<m:MaterialColumn grid="l6 m5 s12">
+	<m:MaterialCard backgroundColor="WHITE" >
+    	<m:MaterialRow>
+<m:MaterialColumn grid="s14">
+<m:MaterialLabel text="hey my name is ... bookings"  ui:field="message"/>
+</m:MaterialColumn>
+</m:MaterialRow>
+<m:MaterialPanel>
+</m:MaterialPanel>
+<m:MaterialRow>
+<m:MaterialPanel  >
+<m:MaterialRow>
+<m:MaterialColumn>
+<m:MaterialIcon iconType="GROUP"></m:MaterialIcon>
+</m:MaterialColumn>
+<m:MaterialLabel text="Contact US" fontSize="15px"></m:MaterialLabel>
+</m:MaterialRow>
+<m:MaterialRow>
+<m:MaterialColumn>
+<m:MaterialIcon iconType="PHONE"></m:MaterialIcon>
+</m:MaterialColumn>
+<m:MaterialLabel text="+32333-1234567"  ui:field="phone"/>
+</m:MaterialRow>
+<m:MaterialRow>
+<m:MaterialColumn>
+<m:MaterialIcon iconType="EMAIL" iconSize="TINY"></m:MaterialIcon>
+</m:MaterialColumn>
+<m:MaterialLabel text="HamzaRiaz1994 @gmail.com"  ui:field="email"/>
+				</m:MaterialRow>
+				
+			</m:MaterialPanel>
+		</m:MaterialRow>
+		<m:MaterialCardAction>
+
+			<m:MaterialLink text="Confirm" ui:field="confirm"/>
+		 	<m:MaterialLink text="Delete" ui:field="delete"/>  
+
+		</m:MaterialCardAction>
+
+	</m:MaterialCard>
+</m:MaterialColumn>
+	</g:HTMLPanel>
+</ui:UiBinder> 

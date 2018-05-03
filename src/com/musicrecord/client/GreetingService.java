@@ -11,6 +11,7 @@ import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
+import com.musicrecord.shared.UserBooking;
 
 /**
  * The client-side stub for the RPC service.
@@ -35,8 +36,11 @@ public interface GreetingService extends RemoteService {
 
 	ArrayList<Reviews> fetchReviews(HashMap<String, String> requestInfo);
 
-	String bookUser(Records record, Date bookDate, Date bookTime);
-	
+	String bookUser(UserBooking userBooking) throws Exception;
+	 
+	ArrayList<UserBooking> fetchUserBooking() throws Exception;
 	//String bookUser(User users);
+
+
 }
 

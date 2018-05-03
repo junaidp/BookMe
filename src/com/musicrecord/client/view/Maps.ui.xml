@@ -1,0 +1,6 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<inherits name="com.google.maps.gwt.GoogleMaps" />
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<script src="http://maps.google.com/maps/api/js?sensor=false" />
+</ui:UiBinder> 

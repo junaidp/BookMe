@@ -10,6 +10,7 @@ import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
+import com.musicrecord.shared.UserBooking;
 
 /**
  * The async counterpart of <code>GreetingService</code>.
@@ -34,13 +35,10 @@ public interface GreetingServiceAsync {
 
 	void fetchReviews(AsyncCallback<ArrayList<Reviews>> callback);
 
-	
 	//void bookUser(User users, AsyncCallback<String> asyncCallback);
 
-	void bookUser(Records record, Date bookDate, Date bookTime, AsyncCallback<String> asyncCallback);
+	void bookUser(UserBooking userBooking, AsyncCallback<String> asyncCallback);
 
-	 
-
-
+	void fetchUserBooking(AsyncCallback<ArrayList<UserBooking>> callback);
 	
 }

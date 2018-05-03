@@ -14,10 +14,12 @@ import com.google.gwt.user.client.ui.SuggestOracle;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
 import com.musicrecord.client.GreetingServiceAsync;
+import com.musicrecord.client.view.MyBookings;
 import com.musicrecord.client.view.SearchAutoComplete;
 import com.musicrecord.client.view.Service;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
+import com.musicrecord.shared.UserBooking;
 import com.sun.java.swing.plaf.windows.resources.windows;
 
 import gwt.material.design.client.ui.MaterialColumn;
@@ -53,7 +55,6 @@ public class MainPresenter implements Presenter
 	private void bind() {
 	
 //		fetchRecords("");
-		
 		display.getSearchAutoComplete().getAcList().addSelectionHandler(new SelectionHandler<SuggestOracle.Suggestion>() {
 			@Override
 			public void onSelection(SelectionEvent<Suggestion> event) {
@@ -96,6 +97,7 @@ public class MainPresenter implements Presenter
 			display.getContainer().add(service);
 		}
 	}
+
 	public void fetchReviews(String data){
 		HashMap<String, String> requestInfo = new HashMap<String, String>();
 		requestInfo.put("keyWord",data );
@@ -116,4 +118,4 @@ public class MainPresenter implements Presenter
 			}
 		});
 	}
-}
+	}

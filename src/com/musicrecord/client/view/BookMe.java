@@ -21,16 +21,17 @@ import com.google.gwt.user.datepicker.client.DatePicker;
 import com.musicrecord.client.GreetingService;
 import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.shared.Records;
+import com.musicrecord.shared.UserBooking;
 
 import gwt.material.design.addins.client.timepicker.MaterialTimePicker;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialDatePicker;
+import gwt.material.design.client.ui.MaterialTextArea;
 
-public class BookMe extends Composite{
-
+public class BookMe extends Composite  {
+	private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
 
 	private static bookMeUiBinder uiBinder = GWT.create(bookMeUiBinder.class);
-
 	interface bookMeUiBinder extends UiBinder<Widget, BookMe> {
 	}
 	@UiField
@@ -41,11 +42,13 @@ public class BookMe extends Composite{
 	MaterialTimePicker timePicker;
 	@UiField
 	MaterialDatePicker datePicker;
+	@UiField
+	MaterialTextArea txtArea;
 
 	GreetingServiceAsync rpcService = GWT.create(GreetingService.class);
 
 
-	public BookMe(Records record) {
+	public BookMe(int recordID) {
 
 		initWidget(uiBinder.createAndBindUi(this));
 
@@ -54,13 +57,30 @@ public class BookMe extends Composite{
 			@Override
 			public void onClick(ClickEvent event) {
 				Window.alert("button is clicked");
-				bookUser(record);
+				UserBooking userBooking = new  UserBooking();
+				userBooking.setTime(timePicker.getValue());
+				userBooking.setDate(datePicker.getValue());
+				userBooking.setMessage(txtArea.getText());
+				userBooking.setUserid(recordID);
+				greetingService.bookUser(userBooking, new AsyncCallback<String>() {
+					@Override
+					public void onSuccess(String result) {
+						Window.alert("OK");
+						
+					}
+					
+					@Override
+					public void onFailure(Throwable caught) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+				});
+			
 
 			}
 		});
 	}
-
-
 
 	public void MaterialDatePicker(){
 
@@ -83,29 +103,29 @@ public class BookMe extends Composite{
 	}
 
 	
-	
-	public void bookUser(Records record){
-
-		Date bookDate = datePicker.getDate();
-		Date bookTime = timePicker.getValue();
-
-
-		rpcService.bookUser(record, bookDate, bookTime, new AsyncCallback<String>() {
-			
-			@Override
-			public void onFailure(Throwable caught) {
-				Window.alert("fail");
-			}
-
-			@Override
-			public void onSuccess(String result) {
-				// TODO Auto-generated method stub
-				Window.alert(result);
-
-			}
-		});
-
-
-	}
+//	
+//	public void bookUser(Records record){
+//
+//		Date bookDate = datePicker.getDate();
+//		Date bookTime = timePicker.getValue();
+//
+//
+//		rpcService.bookUser(record, bookDate, bookTime, new AsyncCallback<String>() {
+//			
+//			@Override
+//			public void onFailure(Throwable caught) {
+//				Window.alert("fail");
+//			}
+//
+//			@Override
+//			public void onSuccess(String result) {
+//				// TODO Auto-generated method stub
+//				Window.alert(result);
+//
+//			}
+//		});
+//
+//
+//	}
 
 }

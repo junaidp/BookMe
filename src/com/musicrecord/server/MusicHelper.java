@@ -12,6 +12,7 @@ import com.musicrecord.shared.Category;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
 import com.musicrecord.shared.User;
+import com.musicrecord.shared.UserBooking;
 
 public class MusicHelper {
 
@@ -55,9 +56,16 @@ public class MusicHelper {
     }
 
 
-	public String bookUser(Records record, Date bookDate, Date bookTime) {
+	
+	public String bookUser(UserBooking userBooking) throws Exception {
 		// TODO Auto-generated method stub
-		return rdbHelper.bookUser(record,bookDate,bookTime);
+		return rdbHelper.bookUser(userBooking);
 	}
+	public ArrayList<UserBooking> fetchUserBooking() throws Exception {
+		// TODO Auto-generated method stub
+		return rdbHelper.fetchUserBooking();
+	}
+
+ 
 	 
 }
