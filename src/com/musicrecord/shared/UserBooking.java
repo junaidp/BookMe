@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import net.sf.cglib.core.TinyBitSet;
+
 @Entity
 @Table(name="booking")
 public class UserBooking implements Serializable{
@@ -36,6 +38,8 @@ public class UserBooking implements Serializable{
 	    @Column(name = "userID")
 	    private int userid;
 
+	    @Column(name = "confirmed")
+	    private boolean confirmed;
 
 
 	    
@@ -87,7 +91,15 @@ public class UserBooking implements Serializable{
 
 
 
- 
+		public boolean getConfirmed() {
+			return confirmed;
+		}
+
+
+
+		public void setConfirmed(boolean confirmed) {
+			this.confirmed = confirmed;
+		}
 
 }
 

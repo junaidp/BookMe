@@ -44,10 +44,12 @@ public class BookMe extends Composite  {
 	MaterialDatePicker datePicker;
 	@UiField
 	MaterialTextArea txtArea;
-
+	
+	private boolean confirm = false;
+	
 	GreetingServiceAsync rpcService = GWT.create(GreetingService.class);
 
-
+    
 	public BookMe(int recordID) {
 
 		initWidget(uiBinder.createAndBindUi(this));
@@ -100,6 +102,14 @@ public class BookMe extends Composite  {
 		HasClickHandlers getbtnBookMe();
 
 
+	}
+
+	public boolean isConfirm() {
+		return confirm;
+	}
+
+	public void setConfirm(boolean confirm) {
+		this.confirm = confirm;
 	}
 
 	

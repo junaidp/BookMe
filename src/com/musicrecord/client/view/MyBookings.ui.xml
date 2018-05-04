@@ -7,7 +7,7 @@
 	<m:MaterialCard backgroundColor="WHITE" >
     	<m:MaterialRow>
 <m:MaterialColumn grid="s14">
-<m:MaterialLabel text="hey my name is ... bookings"  ui:field="message"/>
+<m:MaterialLabel text=""  ui:field="message" />
 </m:MaterialColumn>
 </m:MaterialRow>
 <m:MaterialPanel>

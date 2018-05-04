@@ -8,16 +8,20 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.musicrecord.client.event.AdminEvent;
 import com.musicrecord.client.event.AdminEventHandler;
+import com.musicrecord.client.event.MainTabEvent;
+import com.musicrecord.client.event.MainTabEventHandler;
 import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsAdminEventHandler;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.event.RecordsUserEventHandler;
 import com.musicrecord.client.presenter.MainPresenter;
+import com.musicrecord.client.presenter.MainTabPresenter;
 import com.musicrecord.client.presenter.HeaderPresenter;
 import com.musicrecord.client.presenter.LoginPresenter;
 import com.musicrecord.client.presenter.Presenter;
 import com.musicrecord.client.presenter.RecordsPresenter;
 import com.musicrecord.client.view.Main;
+import com.musicrecord.client.view.MainPageTab;
 import com.musicrecord.client.view.HeaderView;
 import com.musicrecord.client.view.LoginDesign;
 import com.musicrecord.client.view.RecordsAdminView;
@@ -49,6 +53,14 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 		loggedInUser = event.getLoggedInUser();
 
 		History.newItem("admin");
+
+	    }
+	});
+	eventBus.addHandler(MainTabEvent.TYPE, new MainTabEventHandler() {
+	    public void onMain(MainTabEvent event) {
+		loggedInUser = event.getLoggedInUser();
+
+		History.newItem("mainTab");
 
 	    }
 	});
@@ -122,6 +134,11 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 		presenter.go(container);
 
 	    }
+	    else if (token.equals("mainTab")) {
+			presenter = new MainTabPresenter(rpcService, eventBus, new MainPageTab());
+			presenter.go(container);
+
+		    }
 
 	}
     }

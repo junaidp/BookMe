@@ -65,7 +65,6 @@ public class HeaderPresenter implements Presenter
 			public void onClick(ClickEvent event) {
 				 
 				MaterialWindow window1 = new MaterialWindow();
-				
 				LoginDesign objDesign = new LoginDesign();
 				Presenter presenter = new LoginPresenter(rpcService, eventBus, window1, objDesign);
 				presenter.go(window1);

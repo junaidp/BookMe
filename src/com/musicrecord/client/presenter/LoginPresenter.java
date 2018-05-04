@@ -2,6 +2,8 @@ package com.musicrecord.client.presenter;
 
 import java.util.logging.Logger;
 
+import org.apache.tools.ant.taskdefs.FixCRLF.AddAsisRemove;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -13,9 +15,11 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.GreetingServiceAsync;
+import com.musicrecord.client.event.MainTabEvent;
 import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.view.LoadingPopup;
+import com.musicrecord.client.view.MainPageTab;
 import com.musicrecord.client.view.SignUpView;
 import com.musicrecord.client.view.Tab;
 import com.musicrecord.client.view.UserView;
@@ -139,18 +143,19 @@ public class LoginPresenter implements Presenter
 				MaterialLoader.loading(false);
 				MaterialLoader.progress(false);
 				if (user != null) {
-					Tab tab  = new Tab();
-					MaterialWindow signUpWindow = new MaterialWindow();
-					signUpWindow.add(tab);
-					signUpWindow.open();
-					//display.getLblError().setVisible(false);
-//					if (user.getRoleId().getRoleId() == 1) {
-//
-//						//eventBus.fireEvent(new RecordsUserEvent(user));
-//
-//					} else {
-//						//eventBus.fireEvent(new RecordsAdminEvent(user));
-//					}
+//					MaterialWindow a = new MaterialWindow();
+//					a.add(new Tab());
+//					a.open();
+//					MainPageTab mainTab = new MainPageTab();
+					
+					display.getLblError().setVisible(false);
+					if (user.getRoleId().getRoleId() == 1) {
+						eventBus.fireEvent(new MainTabEvent(user));
+						//eventBus.fireEvent(new RecordsUserEvent(user));
+
+					} else {
+						eventBus.fireEvent(new RecordsAdminEvent(user));
+					}
 				} else {
 					Window.alert("iusername invalid");
 					display.getLblError().setVisible(true);
