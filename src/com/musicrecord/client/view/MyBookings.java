@@ -1,5 +1,7 @@
 package com.musicrecord.client.view;
 
+import java.util.ArrayList;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -7,10 +9,13 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
+import com.musicrecord.client.GreetingService;
+import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.shared.UserBooking;
 import com.sun.java.swing.plaf.windows.resources.windows;
 
@@ -19,6 +24,8 @@ import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialLink;
 
 public class MyBookings extends Composite implements HasText {
+	private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+
 
 	private static MyBookingsUiBinder uiBinder = GWT.create(MyBookingsUiBinder.class);
 
@@ -35,21 +42,57 @@ public class MyBookings extends Composite implements HasText {
 	@UiField
 	MaterialLink delete;
 	
-	UserBooking userBooking = new UserBooking();
-
-	public MyBookings(UserBooking userBooking) {
+	//UserBooking userBooking = new UserBooking();
+     public MyBookings(UserBooking userBooking) {
 		initWidget(uiBinder.createAndBindUi(this));
-		this.message.setText(userBooking.getMessage());
-		this.message.setBackgroundColor(Color.BROWN_LIGHTEN_1);	
-        this.confirm.addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				// TODO Auto-generated method stub
-				userBooking.setConfirmed(true);
-				
-			}	
-				
-		});
+		message.setText(userBooking.getMessage());
+		message.setBackgroundColor(Color.BLUE_ACCENT_3);	
+
+//		confirm.addClickHandler(new ClickHandler() {
+//		@Override
+//			public void onClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//				userBooking.setConfirmed(true);
+//			
+//				greetingService.bookUser(userBooking, new AsyncCallback<String>() {
+//					@Override
+//					public void onSuccess(String result) {
+//						Window.alert("Confirmed Successfully");
+//		
+//						
+//					}
+//					
+//					@Override
+//					public void onFailure(Throwable caught) {
+//						// TODO Auto-generated method stub
+//						
+//					}
+//					
+//				});
+//			}	
+//				
+//		});
+//		delete.addClickHandler(new ClickHandler() {
+//			
+//			@Override
+//			public void onClick(ClickEvent event) {
+//				// TODO Auto-generated method stub
+//			userBooking.setActive(false);	
+//			greetingService.bookUser(userBooking, new AsyncCallback<String>() {
+//				@Override
+//				public void onSuccess(String result) {
+//					Window.alert("successfully deleted");
+//				}
+//				
+//				@Override
+//				public void onFailure(Throwable caught) {
+//					// TODO Auto-generated method stub
+//					
+//				}
+//				
+//			});
+//			}
+//		});
 	}
 	@Override
 	public String getText() {
@@ -85,5 +128,17 @@ public class MyBookings extends Composite implements HasText {
 
 	public void setEmail(MaterialLabel email) {
 		this.email = email;
+	}
+	public MaterialLink getConfirm() {
+		return confirm;
+	}
+	public void setConfirm(MaterialLink confirm) {
+		this.confirm = confirm;
+	}
+	public MaterialLink getDelete() {
+		return delete;
+	}
+	public void setDelete(MaterialLink delete) {
+		this.delete = delete;
 	}
 }

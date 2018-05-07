@@ -40,6 +40,9 @@ public class UserBooking implements Serializable{
 
 	    @Column(name = "confirmed")
 	    private boolean confirmed;
+	    
+	    @Column(name = "active")
+	    private boolean active;
 
 
 	    
@@ -99,6 +102,18 @@ public class UserBooking implements Serializable{
 
 		public void setConfirmed(boolean confirmed) {
 			this.confirmed = confirmed;
+		}
+
+
+
+		public boolean isActive() {
+			return active;
+		}
+
+
+
+		public void setActive(boolean active) {
+			this.active = active;
 		}
 
 }

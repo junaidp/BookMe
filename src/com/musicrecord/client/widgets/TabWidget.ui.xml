@@ -13,9 +13,12 @@
 	</m:MaterialTabItem>
 	
 	
-	
+	<m:MaterialTabItem waves="YELLOW" >
+	<m:MaterialLink ui:field="tab2" text="Confirmed bookings" href="#tab2" textColor="WHITE" waves="LIGHT">
+	</m:MaterialLink>
+	</m:MaterialTabItem>
 	<m:MaterialTabItem waves="YELLOW">
-	<m:MaterialLink text="SEARCH" iconType= "SEARCH" href="#tab2" textColor="WHITE" waves="LIGHT"></m:MaterialLink>
+	<m:MaterialLink text="SEARCH" iconType= "SEARCH" href="#tab3" textColor="WHITE" waves="LIGHT"></m:MaterialLink>
 	</m:MaterialTabItem>
 	</m:MaterialTab>
 	</m:MaterialColumn>
@@ -23,10 +26,13 @@
 	<m:MaterialColumn m:id="tab1" grid="s12" ui:field="tab1Container">
 	
 	</m:MaterialColumn>
+	<m:MaterialColumn m:id="tab2" grid="s12" ui:field="tab2Container">
+	
+	</m:MaterialColumn>
 	
 
 	
-	<m:MaterialColumn m:id="tab2" grid="s12">
+	<m:MaterialColumn m:id="tab3" grid="s12">
 	    <v:SearchAutoComplete></v:SearchAutoComplete>
 	</m:MaterialColumn>
 

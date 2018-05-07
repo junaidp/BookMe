@@ -2,7 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
 	xmlns:v="urn:import:com.musicrecord.client.view"
-	xmlns:m="urn:import:gwt.material.design.client.ui">
+	xmlns:m="urn:import:gwt.material.design.client.ui" xmlns:musicrecord="urn:import:com.musicrecord.client.widgets">
 	
 	<ui:style>
 	
@@ -13,8 +13,8 @@
 	</ui:style>
 		
 		<m:MaterialColumn>
-
-	   <v:Slider></v:Slider>
+<musicrecord:Slider></musicrecord:Slider>
+	   
 		 <v:SearchAutoComplete ui:field="searchAutoComplete"></v:SearchAutoComplete>
 		
 		

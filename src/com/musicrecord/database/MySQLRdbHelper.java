@@ -332,7 +332,7 @@ public class MySQLRdbHelper {
 
 		try {
 			session = sessionFactory.openSession();
-			session.saveOrUpdate(userBooking);
+			session.saveOrUpdate(userBooking); // As u did saveOrUpdate here , thats why its working FINE , agar save() kerte tau pehle wale ko overwrite ker dta ...
 			session.flush();
 			return "Booking Successfull";
 
@@ -355,7 +355,9 @@ public class MySQLRdbHelper {
 			session = sessionFactory.openSession();
 
 			Criteria crit = session.createCriteria(UserBooking.class);
-
+			//crit.createAlias("recordId", "rec");
+			crit.add(Restrictions.eq("confirmed", false));
+			crit.add(Restrictions.eq("active", true));
 			List csList = crit.list();
 
 			for (Iterator it = csList.iterator(); it.hasNext();) {
@@ -369,6 +371,36 @@ public class MySQLRdbHelper {
 		} catch (Exception ex) {
 			logger.warn(String.format("Exception occured in Fetch UserBooking", ex.getMessage()), ex);
 			throw new Exception("Exception occured in fetchUserBooking");
+		} finally {
+			session.close();
+		}
+	}
+	
+	public ArrayList<UserBooking> fetchConfirmedBookings() throws Exception {
+		// TODO Auto-generated method stub
+		Session session = null;
+
+		ArrayList<UserBooking> listUserBooking = new ArrayList<UserBooking>();
+		try {
+			session = sessionFactory.openSession();
+
+			Criteria crit = session.createCriteria(UserBooking.class);
+			//crit.createAlias("recordId", "rec");
+			crit.add(Restrictions.eq("confirmed", true));
+	//		crit.add(Restrictions.eq("active", false));
+			List csList = crit.list();
+
+			for (Iterator it = csList.iterator(); it.hasNext();) {
+
+				UserBooking userBooking = (UserBooking) it.next();
+				listUserBooking.add(userBooking);
+
+			}
+			return listUserBooking;
+
+		} catch (Exception ex) {
+			logger.warn(String.format("Exception occured in FetchConfirmBooking", ex.getMessage()), ex);
+			throw new Exception("Exception occured in fetchConfirmBooking");
 		} finally {
 			session.close();
 		}

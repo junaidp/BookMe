@@ -19,10 +19,10 @@ import com.musicrecord.client.event.MainTabEvent;
 import com.musicrecord.client.event.RecordsAdminEvent;
 import com.musicrecord.client.event.RecordsUserEvent;
 import com.musicrecord.client.view.LoadingPopup;
-import com.musicrecord.client.view.MainPageTab;
+import com.musicrecord.client.view.MainTabView;
 import com.musicrecord.client.view.SignUpView;
-import com.musicrecord.client.view.Tab;
 import com.musicrecord.client.view.UserView;
+import com.musicrecord.client.widgets.TabWidget;
 import com.musicrecord.shared.User;
 import com.sun.java.swing.plaf.windows.resources.windows;
 

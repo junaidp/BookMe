@@ -21,7 +21,7 @@ import com.musicrecord.client.presenter.LoginPresenter;
 import com.musicrecord.client.presenter.Presenter;
 import com.musicrecord.client.presenter.RecordsPresenter;
 import com.musicrecord.client.view.Main;
-import com.musicrecord.client.view.MainPageTab;
+import com.musicrecord.client.view.MainTabView;
 import com.musicrecord.client.view.HeaderView;
 import com.musicrecord.client.view.LoginDesign;
 import com.musicrecord.client.view.RecordsAdminView;
@@ -135,7 +135,7 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 
 	    }
 	    else if (token.equals("mainTab")) {
-			presenter = new MainTabPresenter(rpcService, eventBus, new MainPageTab());
+			presenter = new MainTabPresenter(rpcService, eventBus, new MainTabView());
 			presenter.go(container);
 
 		    }

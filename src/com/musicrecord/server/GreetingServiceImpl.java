@@ -88,6 +88,11 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		return musicHelper.fetchUserBooking();
 	}
 
+	@Override
+	public ArrayList<UserBooking> fetchConfirmedBookings() throws Exception {
+		// TODO Auto-generated method stub
+		return musicHelper.fetchConfirmedBookings() ;
+	}
 
 
 //	@Override

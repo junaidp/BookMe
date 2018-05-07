@@ -40,5 +40,7 @@ public interface GreetingServiceAsync {
 	void bookUser(UserBooking userBooking, AsyncCallback<String> asyncCallback);
 
 	void fetchUserBooking(AsyncCallback<ArrayList<UserBooking>> callback);
+
+	void fetchConfirmedBookings(AsyncCallback<ArrayList<UserBooking>> callback);
 	
 }

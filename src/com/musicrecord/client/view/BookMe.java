@@ -47,6 +47,8 @@ public class BookMe extends Composite  {
 	
 	private boolean confirm = false;
 	
+	
+	
 	GreetingServiceAsync rpcService = GWT.create(GreetingService.class);
 
     
@@ -58,7 +60,7 @@ public class BookMe extends Composite  {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert("button is clicked");
+				
 				UserBooking userBooking = new  UserBooking();
 				userBooking.setTime(timePicker.getValue());
 				userBooking.setDate(datePicker.getValue());
@@ -104,13 +106,6 @@ public class BookMe extends Composite  {
 
 	}
 
-	public boolean isConfirm() {
-		return confirm;
-	}
-
-	public void setConfirm(boolean confirm) {
-		this.confirm = confirm;
-	}
 
 	
 //	

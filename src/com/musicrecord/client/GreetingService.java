@@ -41,6 +41,8 @@ public interface GreetingService extends RemoteService {
 	ArrayList<UserBooking> fetchUserBooking() throws Exception;
 	//String bookUser(User users);
 
+	ArrayList<UserBooking> fetchConfirmedBookings() throws Exception;
+
 
 }
 

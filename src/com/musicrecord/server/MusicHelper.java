@@ -65,7 +65,9 @@ public class MusicHelper {
 		// TODO Auto-generated method stub
 		return rdbHelper.fetchUserBooking();
 	}
-
- 
+	public ArrayList<UserBooking> fetchConfirmedBookings() throws Exception {
+		// TODO Auto-generated method stub
+		return rdbHelper.fetchConfirmedBookings() ;
+	}
 	 
 }
