@@ -8,6 +8,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.presenter.MainTabPresenter.Display;
 import com.musicrecord.client.widgets.TabWidget;
 
+import gwt.material.design.client.ui.MaterialRow;
+
 
 public class MainTabView extends Composite implements Display {
 
@@ -27,5 +29,7 @@ public class MainTabView extends Composite implements Display {
 	public void setTabWidget(TabWidget tabWidget) {
 		this.tabWidget = tabWidget;
 	}
+	
+
 	
 }

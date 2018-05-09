@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.GreetingService;
 import com.musicrecord.client.GreetingServiceAsync;
+import com.musicrecord.shared.Records;
 import com.musicrecord.shared.User;
 
 import gwt.material.design.client.ui.MaterialButton;
@@ -35,12 +36,12 @@ public class SignUpView extends Composite {
 				User user = new User();
 				user.setName(email.getText());
 				user.setPassword(password.getText());
+				
 				greetingService.signup(user , new AsyncCallback<String>() {
 					
 					@Override
 					public void onSuccess(String result) {
 						Window.alert(result);
-						
 					}
 					
 					@Override

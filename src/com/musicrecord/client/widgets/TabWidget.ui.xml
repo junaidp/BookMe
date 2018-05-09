@@ -30,10 +30,8 @@
 	
 	</m:MaterialColumn>
 	
-
-	
-	<m:MaterialColumn m:id="tab3" grid="s12">
-	    <v:SearchAutoComplete></v:SearchAutoComplete>
+	<m:MaterialColumn m:id="tab3" grid="s12" ui:field="searchTabContainer">
+	    <v:SearchAutoComplete ui:field="tabSearch"></v:SearchAutoComplete>
 	</m:MaterialColumn>
 
 	</m:MaterialRow>

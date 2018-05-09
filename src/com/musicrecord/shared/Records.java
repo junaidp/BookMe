@@ -34,6 +34,10 @@ public class Records implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private Category category;
     
+    @JoinColumn(name = "userid")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
+    
     @Column(name = "displayimage")
     private String displayImage;
 
@@ -108,6 +112,14 @@ public class Records implements Serializable {
 
 	public void setReviews(ArrayList<Reviews> reviews) {
 		this.reviews = reviews;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	

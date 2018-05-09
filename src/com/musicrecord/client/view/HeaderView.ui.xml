@@ -2,10 +2,11 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:gwt.material.design.client.ui" >
-
-<m:MaterialNavBar>
+<m:MaterialPanel>
+<m:MaterialHeader ui:field="header">
+<m:MaterialNavBar activates="sidenavNavShrink" >
 <m:MaterialNavBrand href="#Test" float="LEFT" text="Book Me"  />
-<m:MaterialNavSection float="RIGHT">
+<m:MaterialNavSection float="RIGHT" >
 <m:MaterialLink iconType="ACCOUNT_CIRCLE" iconPosition="LEFT" text="Sign in" textColor="WHITE" waves="LIGHT" ui:field="signin"/>
 <m:MaterialLink iconType="AUTORENEW" iconPosition="LEFT" text="Refresh" textColor="WHITE" waves="LIGHT"/>
 <m:MaterialTooltip text="menu">
@@ -16,4 +17,6 @@
 </m:MaterialTooltip>
 </m:MaterialNavSection>
 </m:MaterialNavBar>
+</m:MaterialHeader>
+</m:MaterialPanel>
 </ui:UiBinder> 

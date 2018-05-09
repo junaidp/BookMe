@@ -15,11 +15,13 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import com.google.gwt.aria.client.Role;
 import com.musicrecord.client.widgets.SubmitReview;
 import com.musicrecord.shared.Category;
 import com.musicrecord.shared.HibernateDetachUtility;
 import com.musicrecord.shared.Records;
 import com.musicrecord.shared.Reviews;
+import com.musicrecord.shared.Roles;
 import com.musicrecord.shared.User;
 import com.musicrecord.shared.UserBooking;
 
@@ -184,6 +186,20 @@ public class MySQLRdbHelper {
 			session = sessionFactory.openSession();
 			session.saveOrUpdate(user);
 			session.flush();
+			Records record = new Records();
+			
+			record.setUser(user);
+			
+			Category category = new Category();
+			category.setCategoryid(1);
+			record.setCategory(category);
+			
+			Roles role = new Roles();
+			role.setRoleId(1);
+			user.setRoleId(role);
+			
+			
+			saveRecord(record);
 			return "User is Saved";
 
 		} catch (Exception ex) {

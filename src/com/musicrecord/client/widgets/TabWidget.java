@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.musicrecord.client.GreetingService;
 import com.musicrecord.client.GreetingServiceAsync;
 import com.musicrecord.client.view.MyBookings;
+import com.musicrecord.client.view.SearchAutoComplete;
 import com.musicrecord.shared.UserBooking;
 
 import gwt.material.design.client.ui.MaterialColumn;
@@ -26,6 +27,9 @@ public class TabWidget extends Composite{
 		
 	}
 	@UiField
+	SearchAutoComplete tabSearch;
+	
+	@UiField
 	MaterialColumn tab1Container;
 	@UiField
 	MaterialTab tab;
@@ -34,12 +38,14 @@ public class TabWidget extends Composite{
 
 	@UiField
 	MaterialColumn tab2Container;
+	@UiField
+	MaterialColumn searchTabContainer;
 	private GreetingServiceAsync rpcService = GWT.create(GreetingService.class);
 	
 	public TabWidget() {
 		
 		initWidget(uiBinder.createAndBindUi(this));
-		
+		//tabSearch.setWidth("100%");
 //		tab1.addClickHandler(new  ClickHandler() {
 //			
 //			@Override
@@ -72,6 +78,22 @@ public class TabWidget extends Composite{
 
 	public void setTab(MaterialTab tab) {
 		this.tab = tab;
+	}
+
+	public MaterialColumn getSearchTabContainer() {
+		return searchTabContainer;
+	}
+
+	public void setSearchTabContainer(MaterialColumn searchTabContainer) {
+		this.searchTabContainer = searchTabContainer;
+	}
+
+	public SearchAutoComplete getTabSearch() {
+		return tabSearch;
+	}
+
+	public void setTabSearch(SearchAutoComplete tabSearch) {
+		this.tabSearch = tabSearch;
 	}
 
 
